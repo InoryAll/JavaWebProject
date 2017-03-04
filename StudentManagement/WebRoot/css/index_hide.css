@@ -1,0 +1,97 @@
+/*index_hide.css style*/
+
+/*style reset*/
+*{
+	margin:0;
+	padding: 0;
+}
+table{
+	border-collapse: collapse;
+}
+a{
+	text-decoration: none;
+}
+/*end reset*/
+
+/*index_hide.css*/
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#hide_content_box{
+	width: 100%;
+	height: 100%;
+	background: #293449;
+	overflow: hidden;
+}
+#hide_content_container{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-right: 15px;
+}
+#exit{
+	display: block;
+	width: 26px;
+	height: 26px;
+	margin:40px 40px;
+	position: fixed;
+	z-index: 9999;
+}
+#hide_content{
+	width: 678px;
+	height: 628px;
+	margin: 0 auto;
+}
+.hide_content_table{
+	width: 678px;
+	height: 628px;
+	text-align: center;
+}
+.hide_logo{
+	display: block;
+	width: 152px;
+	height: 152px;
+	border-radius: 76px;
+	background: #ce616e;
+	line-height: 152px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	margin:0 auto;
+	margin-top: 66px;
+}
+.hide_title{
+	font-size: 16px;
+}
+.hide_content_table p{
+	color: #fff;
+}
+.function
+{
+	width: 338px;
+	height: 144px;
+}
+.function a{
+	display: block;
+	width: 338px;
+	height: 144px;	
+	text-align: center;
+}
+.function .head{
+	color:#ce616e;
+	font-size: 24px;
+	padding-top: 36px;
+}
+.function .detail{
+	font-size: 16px;
+	padding-top: 18px;
+	}
+#exit:hover{
+	opacity: 0.3;
+}
+.function a:hover{
+	background: #1f2838;
+}
+/*end index_hide*/

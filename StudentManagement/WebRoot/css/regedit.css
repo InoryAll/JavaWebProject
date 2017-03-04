@@ -1,0 +1,263 @@
+/*regedit.css style*/
+
+/*style reset*/
+*{
+	margin:0;
+	padding:0;
+}
+table{
+	border-collapse: collapse;
+}
+a{
+	text-decoration: none;
+}
+#regedit_username,#regedit_password,#regedit_password_confirm,#regedit_name,#regedit_phone,#regedit_submit{
+	border: none;
+	background: none;
+}
+input{
+	outline: none;
+}
+/*end reset*/
+
+/*regedit.css*/
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#regedit_box{
+	width: 100%;
+	height: 100%;
+	background: #293449;
+	overflow: hidden;
+}
+#regedit_container
+{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-right: 15px;
+}
+.regedit_exit{
+	display: block;
+	width: 26px;
+	height: 26px;
+	margin:40px 40px;
+	position: fixed;
+	z-index: 9999;
+}
+#regedit_content1{
+	width: 678px;
+	height: 680px;
+	margin:0 auto;
+	display: block;
+}
+#regedit_content2{
+	width: 678px;
+	height: 680px;
+	margin:0 auto;
+	display: none;
+}
+#regedit_content3{
+	width: 678px;
+	height: 680px;
+	margin:0 auto;
+	display: none;
+}
+.regedit_table{
+	width: 678px;
+	height: 580px;
+	background: #fff;
+	margin-top: 150px;
+	border-radius: 4px;
+	box-shadow: 10px 10px 54px #fff;
+}
+.regedit_welcome{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	background: #ce616e;
+	text-align: center;
+	line-height: 100px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 24px;
+}
+.regedit_step{
+	display: block;
+	width: 42px;
+	height: 52px;
+	background: url("../images/regedit_step.png") no-repeat;
+	text-align: center;
+	line-height: 40px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 24px;
+}
+.regedit_username_div,.regedit_password_div,.regedit_password_confirm_div,.regedit_name_div,.regedit_phone_div{
+	width: 420px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	background: url("../images/regedit_field.png") no-repeat 70px 0px;
+	margin: 0 auto;
+}
+.regedit_username_pic,.regedit_password_pic,.regedit_password_confirm_pic,.regedit_name_pic,.regedit_phone_pic{
+	float: left;
+	margin-top: 4px;
+	margin-left: 88px;
+}
+#regedit_username,#regedit_password,#regedit_password_confirm,#regedit_name,#regedit_phone{
+	float: left;
+	display: block;
+	margin-left: 20px;
+	width: 196px;
+	font-size: 20px;
+	margin-top: 10px;
+}
+#username_tip,#password_tip,#password_confirm_tip,#name_tip,#phone_tip{
+	display: block;
+	float: left;
+	margin-left: 30px;
+	color: red;
+}
+.regedit_next{
+	display: block;
+	width: 92px;
+	height: 42px;
+	background:url("../images/regedit_button.png") no-repeat;
+	text-align: center;
+	line-height: 42px;
+	font-size: 16px;
+	color: #fff;
+	margin: 0 auto;
+}
+.active{
+	background:url("../images/regedit_step_hover.png") no-repeat;
+} 
+.regedit_next:hover{
+	opacity: 0.7;
+}
+.sex_area_male{
+	display: block;
+	float: left;
+	margin-left: 204px;
+	font-size: 20px;
+	color: #485a61;
+	font-weight: bold;
+}
+.sex_area_female{
+	display: block;
+	float: left;
+	margin-left: 50px;
+	font-size: 20px;
+	color: #485a61;
+	font-weight: bold;
+}
+.sex_button{
+	display: block;
+	float: left;
+}
+#sex_tip{
+	margin-left: 152px;
+	color: red;
+}
+.regedit_department_div{
+	width: 420px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 auto;
+}
+.regedit_department_pic{
+	float: left;
+	margin-top: 4px;
+	margin-left: 72px;
+}
+#department_select{
+	float: left;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background: url("../images/select.png") #fff no-repeat right center;
+	width: 228px;
+	height: 30px;
+	font-size: 20px;
+	margin-top: 4px;
+	margin-left: 20px;
+	border-radius: 4px;
+	color:#485a61;
+	border: 2px solid #485a61;
+}
+#department_tip{
+	display: block;
+	float: left;
+	margin-left: 20px;
+	color: red;
+}
+.regedit_class_div{
+	width: 420px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 auto;
+}
+.regedit_class_pic{
+	float: left;
+	margin-top: 4px;
+	margin-left: 80px;
+}
+#class_select{
+	float: left;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background: url("../images/select.png") #fff no-repeat right center;
+	width: 214px;
+	height: 30px;
+	font-size: 20px;
+	margin-top: 4px;
+	margin-left: 20px;
+	border-radius: 4px;
+	color:#485a61;
+	border: 2px solid #485a61;
+}
+#class_tip{
+	display: block;
+	float: left;
+	margin-left: 12px;
+	color: red;
+}
+#submit_check_tip,#submit_server_tip{
+	display: block;
+	width: 180px;
+	height: 30px;
+	margin-left: 302px;
+	font-weight: bold;
+	color: red;
+	line-height: 30px;
+}
+.regedit_submit_div{
+	display: block;
+	width: 100px;
+	height: 60px;
+	background:#485a61 ;
+	box-shadow: 4px 4px 16px #000;
+	text-align: center;
+	line-height: 60px;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+#regedit_submit{
+	font-size: 20px;
+	color: white;
+}
+.regedit_submit_div:hover{
+	background: #ce616e;
+}
+.regedit_exit:hover{
+	opacity: 0.3;
+}
+/*end regedit*/

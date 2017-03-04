@@ -1,0 +1,145 @@
+/*login.css style*/
+
+/*style reset*/
+*{
+	margin:0;
+	padding: 0;
+}
+table{
+	border-collapse: collapse;
+}
+a{
+	text-decoration: none;
+}
+#username,#password,#submit{
+	border:none;
+	background: none;
+}
+input{
+	outline: none;
+}
+/*end reset*/
+
+/*login.css*/
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#login_box{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #293449;
+}
+#login_container{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-right: 15px;
+}
+#login_exit{
+	display: block;
+	width: 26px;
+	height: 26px;
+	margin:40px 40px;
+	position: fixed;
+	z-index: 9999;
+}
+#login_content{
+	width: 678px;
+	height: 600px;
+	margin: 0 auto;
+}
+.login_table{
+	width: 678px;
+	height: 500px;
+	background: #fff;
+	margin-top: 150px;
+	border-radius: 4px;
+	box-shadow: 10px 10px 54px #fff;
+}
+.login_welcome{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	background: #ce616e;
+	text-align: center;
+	line-height: 100px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 24px;
+
+}
+.username_div{
+	width: 252px;
+	height: 30px;
+	background: url("../images/separator.png") no-repeat #fff 34px 0px;
+	text-align: center;
+	line-height: 30px;
+	margin: 0 auto;
+	border:1px solid #e5e5e8;
+}
+.username_pic{
+	margin-left: -40px;
+}
+#username{
+	margin-left: 30px;
+}
+.password_div{
+	width: 252px;
+	height: 30px;
+	background: url("../images/separator.png") no-repeat #fff 34px 0px;
+	text-align: center;
+	line-height: 30px;
+	margin: 0 auto;
+	border:1px solid #e5e5e8;
+}
+.password_pic{
+	margin-left: -40px;
+}
+#password{
+	margin-left: 30px;
+}
+.submit_div{
+	display: block;
+	width: 86px;
+	height: 28px;
+	background: #cccccc;
+	margin:0 auto;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 4px;
+	box-shadow: 4px 4px 2px #bcbcbc;
+}
+#submit{
+	font-size: 18px;
+	color: #fff;
+}
+.no_regedit_div{
+	text-align: center;
+}
+#toolstrip{
+	display: block;
+	color: red;
+	margin-left: 212px;
+	width: 254px;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+}
+.no_regedit_div a{
+	color: #999999;
+	font-size: 12px;
+}
+#login_exit:hover{
+	opacity: 0.3;
+}
+.submit_div:hover{
+	background: #293449;
+}
+.no_regedit:hover{
+	color: #293449;
+}
+/*end login*/

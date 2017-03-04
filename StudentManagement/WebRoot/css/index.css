@@ -1,0 +1,392 @@
+/*index.css style*/
+
+/*style reset*/
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+table{
+	border-collapse: collapse;
+}
+/*end reset*/
+
+/*index.css*/
+#header{
+	height: 917px;
+	background: #32425c;
+}
+.pic_tab{
+	height: 917px;
+}
+.item1
+{
+	position: absolute;
+	width: 100%;
+	height: 917px;
+	background: url("../images/map.png") no-repeat center 85%;
+	background-size:750px 450px;
+	text-align: center;
+}
+#header h1{
+	color: #fff;
+}
+#menu{
+	position: fixed;
+	display: block;
+	width: 30px;
+	height: 26px;
+	left: 40px;
+	top:40px;
+	z-index: 9999;
+}
+.top_tag{
+	width: 86px;
+	height: 86px;
+	text-align: center;
+	line-height: 86px;
+	border-radius: 43px;
+	background: #ce616e;
+	font-size:30px;
+	margin:0 auto;
+}
+#precious,#next{
+	position: absolute;
+	display: block;
+	width:44px;
+	height: 44px;
+	background: #2c3b52;
+	border-radius: 44px;
+	text-align: center;
+	line-height: 44px;	
+}
+#precious{
+	left: 1%;
+	top: 50%;
+}
+#next{
+	right: 1%;
+	top: 50%
+}
+.title{
+	font-size: 42px;
+	padding-top: 8%;
+}
+.introduction{
+	color:#517189;
+	font-size: 15px;
+	padding-top: 5%;
+}
+.top_container{
+	margin:0px auto;
+	text-align: center;
+	margin-top: -230px;
+}
+#student_search_container{
+	height:458px;
+	background: #ebeff2;
+}
+#student_search{
+	width: 868px;
+	height: 458px;
+	margin:0 auto;
+}
+#student_select_container{
+	height: 518px;
+	background: #fff;
+}
+#student_judgement_container{
+	height: 496px;
+	background: #ebeff2;
+}
+.student_search_pic{
+	display: block;
+	padding-top: 106px;
+	float: left;
+	padding-left: 0px;
+}
+.student_search_list{
+	
+	padding-top: 128px;
+	padding-left: 494px;
+}
+.student_search_list dt{
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+	padding-bottom: 40px;
+}
+.student_search_list dd{
+	font-size: 12px;
+	color: #000;
+	line-height: 26px;
+}
+#student_search_btn_container{
+	width: 146px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	padding-top: 44px;
+}
+#student_search_btn{
+	display: block;
+	width: 146px;
+	height: 40px;
+	font-size: 14px;
+	color: #2577ba;
+	border: 1px solid #dadee0;
+}
+#student_select{
+	width: 868px;
+	height: 518px;
+	margin:0 auto;
+}
+.student_select_list
+{
+	float: left;
+	padding-top:132px;
+	padding-left: 54px; 
+}
+.student_select_list dt{
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+	padding-bottom: 40px;
+}
+.student_select_list dd{
+	font-size: 12px;
+	color: #000;
+	line-height: 26px;
+}
+#student_select_btn_container{
+	width: 146px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	padding-top: 44px;
+}
+#student_select_btn{
+	display: block;
+	width: 146px;
+	height: 40px;
+	font-size: 14px;
+	color: #2577ba;
+	border: 1px solid #dadee0;
+}
+.student_select_pic{
+	display: block;
+	padding-top: 108px;
+	padding-left: 76px;
+}
+#student_judgement
+{
+	width:868px;
+	height: 496px;
+	margin:0 auto;
+}
+.student_judgement_pic{
+	display: block;
+	float: left;
+	padding-top: 46px;
+	padding-left: 0px;
+}
+.student_judgement_list{
+	padding-left: 488px;
+	padding-top:142px ;
+}
+.student_judgement_list dt{
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+	padding-bottom: 40px;
+}
+.student_judgement_list dd
+{
+	font-size: 12px;
+	color: #000;
+	line-height: 26px;
+}
+#student_judgement_btn_container{
+	width: 146px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	padding-top: 44px;
+}
+#student_judgement_btn{
+	display: block;
+	width: 146px;
+	height: 40px;
+	font-size: 14px;
+	color: #2577ba;
+	border: 1px solid #dadee0;
+}
+#footer{
+	height: 756px;
+	background: #32425c;
+}
+.footer_container{
+	width: 390px;
+	height: 418px;
+	margin:0 auto;
+	text-align: center;
+}
+.footer_container h1{
+	color: #fff;
+	font-size: 16px;
+	font-style: italic;
+}
+.top{
+	display: block;
+	width: 44px;
+	height: 44px;
+	border-radius: 22px;
+	background: #ce616e;
+	line-height: 44px;
+	margin:0 auto;
+	margin-top: 192px;
+}
+.copy p{
+	color: #5e7189;
+	font-size:10px;
+}
+.footer_content p{
+	font-size: 12px;
+	color: #fff;
+	text-align: left;
+}
+.footer_title{
+	padding-top: 40px;
+}
+.copy{
+	padding-top: 14px;
+}
+.footer_content{
+	padding-top: 46px;
+}
+#menu:hover{
+	opacity: 0.3;
+}
+#student_search_btn:hover{
+	color: #32425c;
+	border-color: #dbdbdb;
+}
+#student_select_btn:hover{
+	color: #32425c;
+	border-color: #dbdbdb;
+}
+#student_judgement_btn:hover{
+	color: #32425c;
+	border-color: #dbdbdb;
+}
+/*end index*/
+
+/*index_hide.css style*/
+
+/*style reset*/
+*{
+	margin:0;
+	padding: 0;
+}
+table{
+	border-collapse: collapse;
+}
+a{
+	text-decoration: none;
+}
+/*end reset*/
+
+/*index_hide.css*/
+/*
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+*/
+#hide_content_box{
+	width: 100%;
+	height: 100%;
+	background: #293449;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	top: -100%;
+	z-index: 99999999;
+}
+#hide_content_container{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-right: 15px;
+}
+#exit{
+	display: block;
+	width: 26px;
+	height: 26px;
+	left:40px;
+	top:40px;
+	position: absolute;
+	z-index: 9999;
+}
+#hide_content{
+	width: 678px;
+	height: 628px;
+	margin: 0 auto;
+}
+.hide_content_table{
+	width: 678px;
+	height: 628px;
+	text-align: center;
+}
+.hide_logo{
+	display: block;
+	width: 152px;
+	height: 152px;
+	border-radius: 76px;
+	background: #ce616e;
+	line-height: 152px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	margin:0 auto;
+	margin-top: 66px;
+}
+.hide_title{
+	font-size: 16px;
+}
+.hide_content_table p{
+	color: #fff;
+}
+.function
+{
+	width: 338px;
+	height: 144px;
+}
+.function a{
+	display: block;
+	width: 338px;
+	height: 144px;	
+	text-align: center;
+}
+.function .head{
+	color:#ce616e;
+	font-size: 24px;
+	padding-top: 36px;
+}
+.function .detail{
+	font-size: 16px;
+	padding-top: 18px;
+	}
+#exit:hover{
+	opacity: 0.3;
+}
+.function a:hover{
+	background: #1f2838;
+}
+/*end index_hide*/
