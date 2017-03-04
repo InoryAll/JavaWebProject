@@ -1,0 +1,228 @@
+/*===============
+	自定义样式
+================*/
+html{
+	background: url('../img/bg2.jpg') no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	/*
+	background: #e7dcd8;
+	*/
+}
+body{
+	background-color:rgba(0,0,0,0) !important;
+}
+/*===============
+	header样式
+================*/
+.login-detail{
+	width: 80%;
+	padding: 2rem;
+	line-height: 3rem;
+	display: none;
+}
+.login-detail .pic{
+	width: 30%;
+	float: left;
+	vertical-align: top;
+}
+.login-detail .detail{
+	float: left;
+	width: 70%;
+	padding: 1rem;
+}
+.login-detail .detail p{
+	font-size: 2rem;
+	font-weight: bold;
+	text-shadow: 0 0 3px snow,0 0 3px snow,0 0 3px snow,0 0 3px snow;
+}
+.login-detail .detail a{
+	font-size: 2rem;
+}
+.userdiv{
+	padding: 1.5rem 0;
+	margin: 1rem 0;
+}
+.userdiv h3{
+	text-shadow: 0 0 3px snow,0 0 3px snow,0 0 3px snow,0 0 3px snow;
+}
+.userdiv button{
+	background: #363636;
+	color:#fff;
+	text-shadow: 0 0 4px #000;
+	padding:1rem 3rem;
+	line-height: 2rem;
+}
+.userdiv button:hover{
+	background: #fff;
+}
+/*===============
+	main样式
+================*/
+.user-info{
+	min-height: 500px !important;
+	padding: 0 1rem;
+}
+.user-detail{
+	width: 80%;
+	min-height: 500px !important;
+	padding: 0 !important;
+}
+.user-detail h3{
+	color: #fff;
+	padding: 1rem;
+	margin: 0;
+	background: #3e3e3e;
+	border-radius: 5px 5px 0 0;
+	line-height: 3rem;
+}
+.item-box{
+	height: calc(500px - 10rem);
+	background: #f1f1f1;
+}
+.tool-item{
+	width: 25%;
+	background: #404040;
+	display: inline-block;
+	padding:2rem 0rem;
+}
+.tool-item span{
+	display: block;
+}
+.tool-item+.tool-item{
+	border-left: 1px solid #555555;
+}
+.tool-item:first-child{
+	border-radius: 0 0 0 5px;
+}
+.tool-item:last-child{
+	border-radius: 0 0 5px 0;
+}
+.item-box .item{
+	border-bottom: 2px solid #e3e3e3;
+}
+.item-box .item .pic{
+	width: 25%;
+	float: left;
+	padding: 1rem;
+}
+.item-box .item .detail{
+	float: left;
+	width: 75%;
+	padding: 1rem;
+}
+.item-box .item .detail p{
+	font-size: 2rem;
+	text-indent: 1rem;
+}
+.item-box .item .detail p span{
+	font-size: 1.4rem;
+	margin-left: 1rem;
+	color: #aab5c8;
+}
+.chat-info{
+	min-height: 500px !important;
+}
+.chat-info .header{
+	color: #fff;
+	padding: 1rem;
+	margin: 0;
+	background: #3e3e3e;
+	border-radius: 5px 5px 0 0;
+	line-height: 3rem;
+}
+.chat-info .main{
+	overflow: hidden;
+}
+.chat-info .main .main-box,.chat-info .main{
+	position: relative;
+	padding-top: 0.2rem;
+	padding-right: 18px;
+	background: rgba(0,0,0,0.3);
+	min-height: 400px !important;
+	max-height: 400px !important;
+}
+.chat-info .main .main-container{
+	position: absolute;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	min-height: 400px !important;
+	max-height: 400px !important;
+}
+
+.chat-info .footer{
+	padding: 1rem;
+	background: #323232;
+	border-radius: 0 0 5px 5px;
+}
+.chat-info .footer .inputbox{
+	width: calc(80% - 18px);
+	float: left;
+}
+.chat-info .footer .inputbtn{
+	width: 20%;
+	float: left;
+}
+.chat-info .item{
+	background: #F6F6F6;
+	padding: 2rem;
+	margin: 1rem;
+	border-radius: 5px;
+	opacity: 1;
+}
+.left .name{
+	display: block;
+	font-size: 2rem;
+	font-weight: bold;
+	float: left;
+	vertical-align: top;
+	line-height: 3rem;
+}
+.left .time{
+	display: block;
+	float: left;
+	margin-left: 1rem;
+	line-height: 3rem;
+}
+.left .content{
+	display: block;
+	text-indent: 1rem;
+	clear: both;
+}
+.right .name{
+	display: block;
+	font-size: 2rem;
+	font-weight: bold;
+	float: right;
+	vertical-align: top;
+	line-height: 3rem;
+}
+.right .time{
+	display: block;
+	float: right;
+	margin-left: 1rem;
+	line-height: 3rem;
+}
+.right .content{
+	display: block;
+	clear: both;
+	text-align: right;
+}
+/*===============
+	footer样式
+================*/
+footer{
+	padding-top: 4rem;
+}
+footer p{
+	padding: 0.6rem;
+	font-size: 1.2rem;
+	color:#fff;
+}
+footer p em{
+	border-radius: 20px;
+	padding: 0.6rem;
+	background: rgba(0,0,0,0.6);
+	margin-left: 8rem;
+}
