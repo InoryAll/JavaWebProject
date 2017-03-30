@@ -1,0 +1,131 @@
+/*
+*Author:Inory;
+*Date:2017-3-28;
+*last modefied by:Inory;
+*last modefied time:2017-3-29;
+*/
+
+/*公共样式*/
+html{
+	background:#00437A;
+}
+
+
+/*头部样式*/
+#header{
+	width: 100%;
+	background: #5E5E5D;
+	height: 60px;
+	min-width: 1000px;
+}
+#header .title{
+	margin: 0;
+	padding:0;
+	line-height: 60px;
+	text-align: center;
+	font-size: 28px;
+	color: #fff;
+	font-weight: bold;
+}
+/*主页面样式*/
+#main{
+	width: 100%;
+	min-width: 1000px;
+	height: 1300px;
+	background:#00437A;
+	padding-top: 50px;
+}
+#main .signup{
+	margin: 0 auto;
+	width: 1000px;
+	height: 1220px;
+	background: #fff;
+	box-shadow: 4px -4px 20px #fff;
+	border-radius: 8px;
+}
+#main .signup tr{
+	height: 60px;
+}
+#main .header-container{
+	position: relative;
+	width: 500px;
+}
+#main .header{
+	display: block;
+    position: absolute;
+    width: 130px;
+    height: 160px;
+    left: 218px;
+    top: 24px;
+    line-height: 160px;
+    text-align: center;
+    border:6px solid #eeeeee;
+    font-size: 10px;
+    color: #aaaaaa;
+
+}
+#main .upload-btn{
+	display: block;
+    position: absolute;
+    width: 80px;
+    height: 34px;
+    left: 244px;
+    top: 200px;
+    font-weight: bold;
+}
+#main .upload{
+	display: block;
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	background: none;
+	border:none;
+	left: 235px;
+    top: 198px;
+    visibility: hidden;
+}
+#main .input-group{
+	width: 300px;
+	margin-left: 188px;
+}
+#main .other-group{
+	width: auto;
+	margin-left: 188px;
+}
+#main .gender{
+	margin-left: 188px;
+}
+#main select{
+	display: inline;
+	width: 300px;
+	margin-left: 188px;
+}
+#main .submit-btn{
+	margin-left: 464px;
+}
+#main select.position{
+	margin-left: 30px;
+}
+#main .own{
+	resize: none;
+}
+
+/*底部样式*/
+#footer{
+	width: 100%;
+	min-width: 1000px;
+	padding-top: 20px;
+	height: 60px;
+	background:#00437A;
+}
+#footer hr{
+	margin: 0;
+}
+#footer .copy{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+}

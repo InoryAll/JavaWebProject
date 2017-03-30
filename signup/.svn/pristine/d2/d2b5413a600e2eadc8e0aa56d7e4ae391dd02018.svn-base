@@ -1,0 +1,204 @@
+/*
+*Author:Inory;
+*Date:2017-3-28;
+*last modefied by:Inory;
+*last modefied time:2017-3-29;
+*/
+
+$(document).ready(function($) {
+	initAllControl();
+	initDatePicker();
+	$.ajax({
+		url:'/signup/servlet/EmployServlet',
+		data:{
+			action:'qunit'
+		},
+		type:'POST',
+		success:function(data){
+			data=JSON.parse(data);
+			for(var i = 0, length1 = data.length; i < length1; i++){
+				var option="<option value=\""+data[i]+"\">"+data[i]+"</option>";
+				$('.company').append(option);
+			}
+		},
+		error:function(){
+			
+		}
+	});
+	
+
+	$('.company').on('change',function (ev) {
+		for(var i = 1, length1 = $('.company').length; i < length1; i++){
+			$('.company').remove();
+		}
+		if ($('.company option:selected').val()!=0) {
+			$.ajax({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				data:{
+					action:'qpost',
+					querypost:$('.company option:selected').val()
+				},
+				success:function (data) {
+					data=JSON.parse(data);
+					for(var i = 0, length1 = data.length; i < length1; i++){
+						var option="<option value=\""+data[i]+"\">"+data[i]+"</option>";
+						$('.position').append(option);
+					}
+				},
+				error:function (error) {
+					
+				}
+			});
+		}
+	});
+	
+	$('.position').on('change',function(){
+		$('.level').val('');
+		$('.degree').val('');
+		$('.other').val('');
+		if ($('.company option:selected').val()!=0&&$('.positon option:selected').val()!=0) {
+			$.ajax({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				data:{
+					action:'qedo',
+					queryunit:$('.company option:selected').val(),
+					querypost:$('.position option:selected').val()
+				},
+				success:function (data) {
+					data=JSON.parse(data);
+					if (data) {
+						$('.level').val(data[0]);
+						$('.degree').val(data[1]);
+						$('.other').val(data[2]);
+					}
+				},
+				error:function (error) {
+					
+				}
+			});
+		}
+		
+	});
+
+
+	$('.upload-btn').on('click', function(ev) {
+		$('.upload').click();
+		upload();
+	});
+
+	$('.submit-btn').on('click', function(ev) {
+		if (validateIdCard()&&validatePhone()) {
+			$('.otherData').val($('.own').val());
+			$('#form').ajaxSubmit({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				success:function (data) {
+					$('.modal').modal('toggle');
+					$('.modal-dialog').css('marginTop', '270px');
+					$('.message').html('您已成功提交!');
+				}
+			});
+		}
+		else
+		{	
+			if (!validateIdCard()) {
+				$('.modal').modal('toggle');
+				$('.modal-dialog').css('marginTop', '270px');
+				$('.message').html('身份证格式不正确！');
+			}
+			else
+			{
+				if (!validatePhone()) {
+					$('.modal').modal('toggle');
+					$('.modal-dialog').css('marginTop', '270px');
+					$('.message').html('手机号码格式不正确！');
+				}
+				
+			}
+			
+		}
+		
+	});
+});
+
+/*初始化表单控件*/
+function initAllControl(){
+	$('input[type=text]').val('');
+}
+
+
+/*初始化日期控件*/
+function initDatePicker(){
+	$('#datepicker').datepicker({
+	  dateFormat: "yy-mm-dd"
+	});
+}
+
+/*文件上传显示图片*/
+function upload(){
+	var reg=/image/g;
+	$('.upload').on('change', function(ev) {
+		var reader=new FileReader();
+		var imageFile = this.files[0];
+		var img=new Image();
+        reader.readAsDataURL(imageFile);
+		reader.onload=function (ev) {
+				if(reg.test(imageFile.type.toLowerCase())&&(imageFile.size<40960))
+				{
+					img.src=ev.target.result;
+					var imgWidth=img.width;
+					var imgHeight=img.height;
+					if (imgWidth==140&&imgHeight==180) {
+						$('.header').attr('src', ev.target.result);
+					}
+					else{
+						$('.header').attr('alt', '图片像素不符合要求');
+					}
+
+				}
+				else{
+					if(imageFile.size>40960)
+					{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '文件大小偏大');
+					}
+					else{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '图片类型不对');
+					}
+				}
+			}
+	});
+}
+
+/*取消图片默认行为*/
+function preventImgDefault(){
+	$('img').on('mousedown',function (ev) {
+		ev.preventDefault();
+	});
+}
+/*验证身份证号*/
+function validateIdCard(){
+	var reg=/\d{17}\w{1}/g;
+	if (reg.test($('.idCard').val())) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+/*验证手机号*/
+function validatePhone(){
+	var reg=/\d{11}/g;
+	if (reg.test($('.tel').val())) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

@@ -1,0 +1,288 @@
+/*
+*Author:Inory;
+*Date:2017-3-28;
+*last modefied by:Inory;
+*last modefied time:2017-3-29;
+*/
+
+$(document).ready(function($) {
+	initAllControl();
+	initDatePicker();
+	initSelect();
+	upload();
+	$('.header').attr('src','');
+
+	$.ajax({
+		url:'/signup/servlet/EmployServlet',
+		data:{
+			action:'qunit'
+		},
+		type:'POST',
+		success:function(data){
+			data=JSON.parse(data);
+			for(var i = 0, length1 = data.length; i < length1; i++){
+				var option="<option value=\""+data[i]+"\">"+data[i]+"</option>";
+				$('.company').append(option);
+			}
+		},
+		error:function(){
+			
+		}
+	});
+	
+
+	$('.company').on('change',function (ev) {
+		/*$('.position').html('<option value="0">请选择岗位</option>');*/
+		for(var i = 1, length1 = $('.position option').length; i < length1; i++){
+			$('.position option').eq(1).remove();
+		}
+		$('.level').val('');
+		$('.degree').val('');
+		$('.other').val('');
+		if ($('.company option:selected').val()!=0) {
+			$.ajax({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				data:{
+					action:'qpost',
+					querypost:$('.company option:selected').val()
+				},
+				success:function (data) {
+					data=JSON.parse(data);
+					if (data) {
+						for(var i = 0, length1 = data.length; i < length1; i++){
+							var option="<option value=\""+data[i]+"\">"+data[i]+"</option>";
+							$('.position').append(option);
+						}
+					}
+				},
+				error:function (error) {
+					
+				}
+			});
+		}
+	});
+	
+	$('.position').on('change',function(){
+		$('.level').val('');
+		$('.degree').val('');
+		$('.other').val('');
+		if ($('.company option:selected').val()!=0&&$('.positon option:selected').val()!=0) {
+			$.ajax({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				data:{
+					action:'qedo',
+					queryunit:$('.company option:selected').val(),
+					querypost:$('.position option:selected').val()
+				},
+				success:function (data) {
+					data=JSON.parse(data);
+					if (data) {
+						$('.level').val(data[0]);
+						$('.degree').val(data[1]);
+						$('.other').val(data[2]);
+					}
+				},
+				error:function (error) {
+					
+				}
+			});
+		}
+		
+	});
+
+	$('.idCard').on('blur',function(){
+		$.ajax({
+			url:'/signup/servlet/EmployServlet',
+			type:'POST',
+			data:{
+				action:'qidcard',
+				idcard:$('.idCard').val()
+			},
+			success:function(data){
+				if (data!=0) {
+					$('.modal').modal('toggle');
+					$('.modal-dialog').css('marginTop', '270px');
+					$('.message').html('该身份证号已被使用!');
+					$('.idCard').val('');
+				}
+			},
+			error:function (error) {
+			}
+		});
+	});
+
+
+	$('.upload-btn').on('click', function(ev) {
+		$('.upload').click();
+	});
+
+	$('.submit-btn').on('click', function(ev) {
+		if (validateIdCard()&&validatePhone()&&$('.header').attr('src')!=''&&validateOther()) {
+			$('.otherData').val($('.own').val());
+			$('#form').ajaxSubmit({
+				url:'/signup/servlet/EmployServlet',
+				type:'POST',
+				success:function (data) {
+					initSelect();
+					initAllControl();
+					$('.header').attr('src','');
+					$('.modal').modal('toggle');
+					$('.modal-dialog').css('marginTop', '270px');
+					$('.message').html('您已成功提交!');
+				}
+			});
+		}
+		else
+		{	
+			if (validateIdCard()==false) {
+				$('.modal').modal('toggle');
+				$('.modal-dialog').css('marginTop', '270px');
+				$('.message').html('身份证格式不正确！');
+			}
+			else
+			{
+				if (validatePhone()==false) {
+					$('.modal').modal('toggle');
+					$('.modal-dialog').css('marginTop', '270px');
+					$('.message').html('手机号码格式不正确！');
+				}
+				else
+				{
+					if ($('.header').attr('src')=='') {
+						$('.modal').modal('toggle');
+						$('.modal-dialog').css('marginTop', '270px');
+						$('.message').html('头像未上传！');
+					}
+					else
+					{
+						if (validateOther()==false) {
+							$('.modal').modal('toggle');
+							$('.modal-dialog').css('marginTop', '270px');
+							$('.message').html('字段请填写完整！');
+						}
+					}
+				}
+				
+			}
+			
+		}
+		
+	});
+});
+
+/*初始化表单控件*/
+function initAllControl(){
+	$('input[type=text]').val('');
+	$('textarea').val('');
+	$('.header').attr('alt','140*180大小，40K以内');
+}
+
+/*初始化select控件*/
+function initSelect() {
+	/*$('.political').html('<option value="">请选择政治面貌</option><option value="党员">党员</option><option value="预备党员">预备党员</option><option value="民主党派">民主党派</option><option value="群众">群众</option>');
+	$('.company').html('<option value="0">请选择招聘单位</option>');
+	$('.position').html('<option value="0">请选择岗位</option>');*/
+	$('.political option:eq(0)').attr('selected', 'selected');
+	for(var i = 1, length1 = $('.company option').length; i < length1; i++){
+		$('.company option').eq(1).remove();
+	}
+	for(var i = 1, length1 = $('.position option').length; i < length1; i++){
+		$('.position option').eq(1).remove();
+	}
+}
+
+
+/*初始化日期控件*/
+function initDatePicker(){
+	$('#datepicker').datepicker({
+	  dateFormat: "yy-mm-dd"
+	});
+}
+
+/*文件上传显示图片*/
+function upload(){
+	$('.upload').on('change', function(ev) {
+		var reg=/image+/g;
+		var reader=new FileReader();
+		var img=new Image();
+		reader.onload=function (ev) {
+				img.src=ev.target.result;		
+				if(reg.test(imageFile.type.toLowerCase())&&(imageFile.size<40960))
+				{
+					var imgWidth;
+					var imgHeight;
+					img.onload=function(){
+						imgWidth=img.width;
+						imgHeight=img.height;
+						$('.header').attr('src', ev.target.result);
+						/*console.log(imageFile+' '+img.width+' '+img.height+' '+img.src);*/
+						if (imgWidth>=130&&imgWidth<=150&&imgHeight>=170&&imgHeight<=190) {	
+							$('.header').attr('src', ev.target.result);
+						}
+						else{
+							$('.header').attr('src', '');
+							$('.header').attr('alt', '图片像素不符合要求');
+							
+						}
+					}
+				}
+				else{
+					if(imageFile.size>40960)
+					{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '文件大小偏大');
+					}
+					else{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '图片类型不对');
+					}
+				}
+			}
+
+		var imageFile = this.files[0];
+        reader.readAsDataURL(imageFile);
+	});
+}
+
+/*取消图片默认行为*/
+function preventImgDefault(){
+	$('img').on('mousedown',function (ev) {
+		ev.preventDefault();
+	});
+}
+/*验证身份证号*/
+function validateIdCard(){
+	var reg=/^\d{17}\w{1}$/;
+	if (reg.test($('.idCard').val())) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+/*验证手机号*/
+function validatePhone(){
+	var reg=/^\d{11}$/;
+	if (reg.test($('.tel').val())) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+/*验证字段是否填写完整*/
+function validateOther(){
+	if ($('.name').val()&&$('.date').val()&&$('.political').val()!=0&&$('.nowWorking').val()&&$('.company').val()!=0&&$('.position').val()!=0&&$('.highestSchool').val()&&$('.highestDepartment').val()) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

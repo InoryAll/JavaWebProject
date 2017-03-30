@@ -1,0 +1,105 @@
+/*
+*Author:Inory;
+*Date:2017-3-28;
+*last modefied by:Inory;
+*last modefied time:2017-3-29;
+*/
+
+$(document).ready(function($) {
+	initDatePicker();
+	$.ajax({
+		url:'/signup/servlet/EmployServlet',
+		data:{
+			action:'qunit'
+		},
+		type:'POST',
+		success:function(data){
+			alert(data);
+		},
+		error:function(){
+			
+		}
+	});
+	$('.upload-btn').on('click', function(ev) {
+		$('.upload').click();
+		upload();
+	});
+	$('.submit-btn').on('click', function(ev) {
+		$('#form').ajaxSubmit({
+			url:'',
+			type:'POST',
+			data:{
+				
+			},
+			success:function (data) {
+				
+			}
+		});
+
+		$('.modal').modal('toggle');
+		$('.modal-dialog').css('marginTop', '270px');
+	});
+});
+
+
+/*初始化日期控件*/
+function initDatePicker(){
+	$('#datepicker').datepicker({
+	  dateFormat: "yy-mm-dd"
+	});
+}
+
+/*文件上传显示图片*/
+function upload(){
+	var reg=/image/g;
+	$('.upload').on('change', function(ev) {
+		var reader=new FileReader();
+		var imageFile = this.files[0];
+		var img=new Image();
+        reader.readAsDataURL(imageFile);
+		reader.onload=function (ev) {
+				if(reg.test(imageFile.type.toLowerCase())&&(imageFile.size<40960))
+				{
+					img.src=ev.target.result;
+					var imgWidth=img.width;
+					var imgHeight=img.height;
+					if (imgWidth==140&&imgHeight==180) {
+						$('.header').attr('src', ev.target.result);
+					}
+					else{
+						$('.header').attr('alt', '图片像素不符合要求');
+					}
+
+				}
+				else{
+					if(imageFile.size>40960)
+					{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '文件大小偏大');
+					}
+					else{
+						$('.header').attr('src', '');
+						$('.header').attr('alt', '图片类型不对');
+					}
+				}
+			}
+	});
+}
+
+/*取消图片默认行为*/
+function preventImgDefault(){
+	$('img').on('mousedown',function (ev) {
+		ev.preventDefault();
+	});
+}
+/*验证身份证号*/
+function validateIdCard(){
+	var reg=/\d{17}\w{1}/;
+	if (reg.test($('.idCard').val())) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

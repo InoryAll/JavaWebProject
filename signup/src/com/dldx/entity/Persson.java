@@ -1,0 +1,134 @@
+package com.dldx.entity;
+
+public class Persson {
+	private int id;
+	private String name;
+	private String sex;
+	private String idcard;
+	private String political;
+	private String photo;
+	private String work;
+	private String telephone;
+	private String punit;
+	private String ppost;
+	private String education;
+	private String degree;
+	private String birthday;
+	private String degschool;
+	private String degmajor;
+	private String pother;
+	private String other;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getIdcard() {
+		return idcard;
+	}
+	public void setIdcard(String idcard) {
+		this.idcard = idcard;
+	}
+	public String getPolitical() {
+		return political;
+	}
+	public void setPolitical(String political) {
+		this.political = political;
+	}
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+	public String getWork() {
+		return work;
+	}
+	public void setWork(String work) {
+		this.work = work;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getPunit() {
+		return punit;
+	}
+	public void setPunit(String punit) {
+		this.punit = punit;
+	}
+	public String getPpost() {
+		return ppost;
+	}
+	public void setPpost(String ppost) {
+		this.ppost = ppost;
+	}
+	public String getEducation() {
+		return education;
+	}
+	public void setEducation(String education) {
+		this.education = education;
+	}
+	public String getDegree() {
+		return degree;
+	}
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	public String getDegschool() {
+		return degschool;
+	}
+	public void setDegschool(String degschool) {
+		this.degschool = degschool;
+	}
+	public String getDegmajor() {
+		return degmajor;
+	}
+	public void setDegmajor(String degmajor) {
+		this.degmajor = degmajor;
+	}
+	public String getPother() {
+		return pother;
+	}
+	public void setPother(String pother) {
+		this.pother = pother;
+	}
+	public String getOther() {
+		return other;
+	}
+	public void setOther(String other) {
+		this.other = other;
+	}
+	@Override
+	public String toString() {
+		return "Persson [id=" + id + ", name=" + name + ", sex=" + sex + ", idcard=" + idcard + ", political="
+				+ political + ", photo=" + photo + ", work=" + work + ", telephone=" + telephone + ", punit=" + punit
+				+ ", ppost=" + ppost + ", education=" + education + ", degree=" + degree + ", birthday=" + birthday
+				+ ", degschool=" + degschool + ", degmajor=" + degmajor + ", pother=" + pother + ", other=" + other
+				+ "]";
+	}	
+	
+	
+}
