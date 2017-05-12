@@ -1,0 +1,71 @@
+#main_box{
+	min-height: 800px;
+}
+#main{
+	min-height: 800px;
+}
+#table_box{
+	height: 800px;
+}
+#regedit_table1,#regedit_table2,#regedit_table3{
+	height: 570px;
+}
+.info-tr{
+	height: auto !important;
+}
+.info-td{
+	height: auto !important;
+} 
+.info-intro{
+	display: block;
+	width: 200px;
+	border: 1px solid #72aec2;
+	height: 175px;
+	overflow:hidden;
+	resize: none;
+	float: left;
+	font-size: 18px;
+}  
+#table_box{
+	position: relative;
+}
+.img-box{
+	display: block;
+	position: absolute;
+	left: 335px;
+	top: 215px;
+	width: 150px;
+	height: 220px;
+}
+.img-box .header{
+	display: block;
+	width: 150px;
+	height: 180px;
+	float: left;
+	clear: both;
+	margin-bottom: 6px;
+	box-sizing: border-box;
+	border:2px solid #eeeeee;
+	line-height: 180px;
+	text-align: center;
+	font-size: 16px;
+	color: #b2b2b2;
+}
+.img-box .upload_btn{
+	display: block;
+	width: 80px;
+	height: 28px;
+	border:none;
+	background: #87b87f;
+	text-align: center;
+	line-height: 20px;
+	margin:0 auto;
+	color: #fff;
+	font-size: 12px;
+}
+.img-box .upload{
+	visibility: hidden;
+}
+.img-box .upload_btn:hover{
+	background: #ffb752;
+}

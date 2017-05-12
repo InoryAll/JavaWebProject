@@ -1,0 +1,320 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page 
+    	import="com.entity.*"
+    	import="com.args.Constant"
+    	import="java.util.List"%>
+    	
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大连大学创新选课系统</title>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+	<% Person loginUser = (Person) session.getAttribute("loginUser");
+	 Pager<Course> courseResult = (Pager<Course>) request.getAttribute("courseResult"); 
+	 List<String> teacherNames = (List<String>) request.getAttribute("teacherNames"); 
+	 List<String> courseNames = (List<String>) request.getAttribute("courseNames"); 
+	 String teacherName = (String) request.getAttribute("teacherName");
+	 String courseName = (String) request.getAttribute("courseName");
+	%>
+</head>
+
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+			<a class="user" href="javascript:;">
+				欢迎您,XXX用户
+			</a>
+		</div>
+	</div>
+	<div id="main_box">
+		<form action="${pageContext.request.contextPath}/course/CourseAction?action=select" method="post" id="index_form" name="index_form">
+		<input type="hidden" name="action" id="action" value=0>
+			<div id="main">
+				<div id="main_left">
+					<ul id="list">
+						<li class="first_li">
+							<a href="${pageContext.request.contextPath}/user/UserAction?action=logout" class="re_login">
+								注销
+							</a>
+							<a href="${pageContext.request.contextPath}/user/regedit.jsp" class="go_regedit">
+								注册
+							</a>
+						</li>
+						<li class="first_menu">
+							<span class="menu_1">
+								<img src="${pageContext.request.contextPath}/images/menu1.png">
+								基本信息查询
+							</span>
+							<ul class="second_menu">
+								<li>
+								<a href="${pageContext.request.contextPath}/user/UserAction?action=modify">
+									|---查看个人信息
+								</a>
+								</li>
+							</ul>
+						</li>
+						<li class="first_menu">
+							<span class="menu_2">
+							<img src="${pageContext.request.contextPath}/images/menu2.png">
+								学生选课
+							</span>
+							<ul class="second_menu">
+								<li>
+									<a href="${pageContext.request.contextPath}/course/CourseAction?action=query">
+										|---选课
+									</a>
+								</li>
+								<li>
+									|---查看已选课程
+								</li>
+							</ul>
+						</li>
+						<li class="last_li first_menu">
+							<span class="menu_3">
+							<img src="${pageContext.request.contextPath}/images/menu3.png">
+								课程评价
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---评价
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="main_right">
+					<div class="top_menu" id="top_menu">
+						<span id="location">
+							首页 > 操作
+						</span>
+					</div>
+					
+						<table class="search_table select_table" id="select_table">
+							<thead></thead>
+							<tbody>
+								<tr class="first_tr">
+									<td colspan="6">
+										选课
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" id="query_info">
+										<select id="CourseName" name="CourseName" class="query_select">
+											<option><%=courseName%></option>
+										<%if(courseNames != null) {%>	
+											<%for(String x : courseNames){ %>
+												<option><%=x%></option>
+											<%}}%>
+										</select>
+										<select id="TeacherName" name="TeacherName" class="query_select">
+											<option><%=teacherName%></option>
+										<%if(teacherNames != null) {%>	
+											<%for(String x : teacherNames){ %>
+												<option><%=x%></option>
+											<%}}%>
+										</select>
+									</td>
+									<td colspan="3" id="query_place">
+										<div class="search_btn_div">
+											<input type="text" name="" placeholder="按课程名搜索">
+										</div>
+										<a href="javascript:index_form.action='${pageContext.request.contextPath}/course/CourseAction?action=query';index_form.submit()" class="search_btn">搜索</a>
+									</td>
+								</tr>
+								<tr>
+									<th>课程号</th>
+									<th>课程名</th>
+									<th>教师号</th>
+									<th>教师名</th>
+									<th>上课时间</th>
+									<th>是否选课</th>
+								</tr>
+								
+							<%for(int i = 0; courseResult != null && i < courseResult.getDataList().size(); i++){%>
+								<%if (i%2 == 1){%>
+								  <tr class="single">
+								<%}else{%>
+								  <tr class="double">
+								<%}%>
+									<td>
+										<%=courseResult.getDataList().get(i).getId()%>
+									</td>
+									<td>
+										<%=courseResult.getDataList().get(i).getName()%>
+									</td>
+									<td>
+										<%=courseResult.getDataList().get(i).getTeacher().getId()%>
+									</td>
+									<td>
+										<%=courseResult.getDataList().get(i).getTeacher().getName()%>
+									</td>
+									<td>
+										<%=courseResult.getDataList().get(i).getDate()%>
+									</td>
+									<td>
+										<input type="checkbox" name="lesson<%=courseResult.getDataList().get(i).getId()%>">
+									</td>
+								</tr>
+							<%}%>
+								
+								
+								
+							
+							
+								<tr id="query_last">
+									<td colspan="6">
+										<a href="#" id="select_back_home">返回</a>
+										<input type="submit"  name="" value="提交" id="select_submit">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+						<table class="search_table" id="search_table">
+							<thead></thead>
+							<tbody>
+								<tr>
+									<td>
+										<p class="tip">* 单击以进行修改,注意:用户名无法进行修改</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											用户:
+										</span>
+										<div class="input_div id_div">
+											<input type="text" name="id" readonly="true"  
+											value="${teacher.id}${student.id}">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											密码:
+										</span>
+										<div class="input_div">
+											<input type="password" name="password" 
+											value="${teacher.password}${student.password}">
+										</div>								
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											姓名:
+										</span>
+										<div class="input_div">
+											<input type="text" name="name" 
+											value="${teacher.name}${student.name}">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											性别:
+										</span>
+										<span class="radio_span">
+											<input type="radio" name="gender" checked value="男">&nbsp;&nbsp;男
+										</span>
+										<span class="radio_span">
+											<input type="radio" name="gender" value="女">&nbsp;&nbsp;女
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											邮箱:
+										</span>
+										<div class="input_div">
+											<input type="text" name="email" 
+											value="${teacher.email}${student.email}">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											电话:
+										</span>
+										<div class="input_div">
+											<input type="text" name="tel" 
+											value="${teacher.tel}${student.tel}">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											院系:
+										</span>
+										<div class="select_div">
+											<select class="select_list">
+												<option>信息工程学院</option>
+												<option>机械学院</option>
+												<option>物理学院</option>
+											</select>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											专业:
+										</span>
+										<div class="select_div">
+											<select class="select_list">
+												<option>软件工程</option>
+												<option>计算机科学与技术</option>
+												<option>通信工程</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="input_span">
+											班级:
+										</span>
+										<div class="select_div">
+											<select class="select_list">
+												<option>141</option>
+												<option>142</option>
+												<option>143</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="submit" name="" value="修改" id="regedit_btn">
+										<a href="#" id="back_to_home">返回</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>	
+					
+					<div id="footer_box">
+						<div id="footer">
+							<div class="split_bottom"></div>
+							<p id="copy">
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="first" name="first" value="1" >
+		</form>
+	</div>
+	
+</body>
+</html>

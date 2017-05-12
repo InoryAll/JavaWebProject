@@ -1,0 +1,647 @@
+/*index.css style*/
+*{
+	margin:0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+table{
+	border-collapse: collapse;
+}
+img{
+	border:none;
+}
+textarea{
+	resize: none;
+	outline: none;
+}
+html{
+	width: 100%;
+	height: 100%;
+	font-family: '微软雅黑';
+}
+
+#header_box{
+	width: 100%; 
+	height:100%;
+	background:#438eb9;
+	min-width: 1348px;
+}
+#header{
+	width:100%;
+	height: 46px;
+	min-width: 1348px;
+	position: relative;
+}
+
+.logo{
+	display: block;
+	width: 300px;
+	height: 46px;
+	text-align: center;
+	font-size: 20px;
+	line-height: 46px;
+	color: #fff;
+	float: left;
+}
+
+#main_box{
+	width: 100%;
+	height: 100%;
+	min-width: 1348px;
+}
+#main{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-width: 1348px;
+	min-height:600px;
+	overflow: hidden;
+}
+#main_left{
+	width:200px;
+	height: 100%;
+	min-height:600px;
+	background: #f2f2f2;
+	float: left;
+}
+#main_right{
+	position: relative;
+	width:auto;
+	min-width: 1080px;
+	height: 100%;
+	min-height: 600px;
+	float: left;
+	overflow-y: hidden;
+}
+
+.user{
+	position: absolute;
+	display: block;
+	float: left;
+	width: 150px;
+	height: 46px;
+	color: #fff;
+	line-height: 46px;
+	background: #62a8d1;
+	right:4px;
+	text-align: center;
+}
+
+#list
+{
+	width: 200px;
+	height: 600px;
+
+}
+.first_menu,.first_li{
+	display: block;
+	width: 200px;
+	min-height: 40px;
+	border-top: 1px solid #e5e5e5;
+	text-align: left;
+	line-height: 40px;
+	font-size: 18px;
+	color: #585858;
+	background: #f8f8f8;
+	text-indent: 20px;
+	
+}
+.first_li{
+	text-align: center;;
+	text-indent: 0px;
+}
+.second_menu li{
+	text-align: left;
+	text-indent: 20px;
+}
+.last_li{
+	border-bottom: 1px solid #e5e5e5;
+}
+.re_login,.go_regedit{
+	display: block;
+	float: left;
+	width: 60px;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	color: #fff;
+	margin-top: 4px;
+	font-weight: bold;
+}
+.re_login{
+	margin-left: 30px;
+	background: #87b87f;
+}
+.go_regedit{
+	margin-left: 20px;
+	background: #6fb3e0;
+}
+.re_login:hover,.go_regedit:hover
+{
+	background: #ffad46;
+}
+.top_menu{
+	width: 1148px;
+	min-width:1148px;
+	height:41px;
+	background:#f5f5f5;
+	border-bottom:1px solid #e5e5e5;
+}
+#location{
+	display: block;
+	width: 1000px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 40px;
+	color: #708fbd;
+	font-size: 18px;
+	border-left:1px solid #cccccc;
+}
+.search_table{
+	width: 1080px;
+	height: auto !important;
+	margin: 0 auto;
+	min-height: 460px;
+	text-align: center;
+	border-top:1px solid #cccccc;
+	margin-top: 4px;
+}
+#footer_box{
+	display: none;
+	width: 100%;
+	height:100px;
+	min-width: 1080px;
+	min-height: 100px;
+	overflow: hidden;
+}
+
+#footer{
+	width: 1080px;
+	height:100%; 
+	min-width: 1080px;
+	min-height: 100px;
+}
+
+.split_bottom{
+	width: 1000px;
+	border:1px solid #e5e5e5;
+	margin-top: 30px;
+}
+#copy{
+	display: block;
+	width: 1000px;
+	height: 30px;
+	margin:0 auto;
+}
+li{
+	cursor: default;
+}
+.tip{
+	text-align: left;
+	font-size:12px;
+	color: red;
+	margin-left: 40%;
+	text-indent: 20px;
+}
+#index_form{
+	width: 100%;
+	height: 100%;
+	min-width: 1348px;
+	min-height: 600px;
+	overflow: hidden;
+}
+.input_span{
+	display: block;
+	width: 110px;
+	height: 30px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 38%;
+	margin-top: 5px;
+	color: #393939;
+}
+.input_div{
+	width:200px;
+	height:30px;
+	float: left;
+	margin-top: 5px;
+	border:1px solid #72aec2;
+}
+.input_div input{
+	display: block;
+	width:200px;
+	height:30px;
+	float: left;
+	font-size: 18px; 
+	border: none;
+	background: none;
+	outline: none;
+	cursor: default;
+}
+#search_table tr{
+	display: block;
+	height: 40px;
+	line-height:40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+#search_table td{
+	display: block;
+	width: 1078px;
+	height: 40px;
+	line-height: 40px;
+}
+.id_div{
+	border: none;
+}
+.id_div input{
+	cursor: default;
+}
+.input_div{
+	border:none;
+}
+.radio_span{
+	float: left;
+	display: block;
+	width:80px;
+	height:30px;
+	margin-top: 5px;
+	line-height: 30px;
+}
+.select_div{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;
+}
+.select_list{
+	display: block;
+	width:150px;
+	height:30px;
+	font-size: 18px;
+	line-height: 30px;
+}
+#regedit_btn,#back_to_home{
+	display: block;
+	width: 80px;
+	height: 30px;
+	border:none;
+	background: #6fb3e0;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	margin-left: 48%;
+	margin-top: 5px;
+}
+#back_to_home{
+	margin-top: 5px;
+	margin-left: 10px;
+	background: #87b87f;
+}
+#regedit_btn:hover,#back_to_home:hover{
+	background: #d15b47;
+}
+.first_tr{
+	height: 40px;
+	line-height:40px;
+	background:url('../images/table_bg.png') repeat-x;
+}
+.first_tr td{
+	height: 40px;
+	line-height:40px;
+	text-align: left;
+	text-indent: 20px;
+	color: #669fc7;
+	font-size: 20px;
+}
+.last_tr{
+	padding-bottom: 2px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#search_table{
+	display: none;
+}
+#select_table{
+	display: none;
+}	
+#query_table{
+	display: none;
+}
+#judge_table{
+	display: none;
+}
+.select_table tr{
+	display: block;
+	height: 40px;
+	line-height:40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.select_table td{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+#select_back_home,#select_submit{
+	display: block;
+	width: 80px;
+	height: 30px;
+	border:none;
+	background: #87b87f;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	margin-left: 80%;
+}
+#select_back_home:hover,#select_submit:hover{
+	background:#d15b47;
+}
+.search_btn:hover{
+	background:#d15b47;
+}
+#select_submit{
+	background: #6fb3e0;
+	margin-left: 10px;
+}
+.query_select{
+	display: block;
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-left: 30px;
+	font-size: 18px;
+	text-align: left;
+}
+#query_info,#query_place{
+	width: 540px;
+}
+.search_btn_div{
+	display: block;
+	float: left;
+	width: 200px;
+	height: 30px;
+	margin-left: 234px;
+	border: 2px solid #abbac3;
+	line-height: 30px;
+}
+.search_btn_div input{
+	display:block;
+	width: 190px;
+	height: 30px;
+	border: none;
+	background: none;
+	font-size: 18px;
+	margin-left: 6px;
+}
+.search_btn{
+	display: block;
+	width: 60px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	float: left;
+	background: #f89406;
+	color: #fff;
+	margin-left: 20px;
+}
+#query_last{
+	border-bottom:1px solid #cccccc;
+}
+#query_last td{
+	width: 1080px;
+}	
+#select_table th,#query_table th,#judge_table th{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+.single{
+	
+}
+.double{
+	background: #f8f8f8;
+}
+.query_table tr{
+	display: block;
+	height: 40px;
+	line-height:40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.query_table td{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+#query_back_home,#judge_back_home{
+	display: block;
+	width: 80px;
+	height: 30px;
+	border:none;
+	background: #87b87f;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	margin-left: 90%;
+}
+#delete_div{
+	position: absolute;
+	display: none;
+	width: 400px;
+	height: 220px;
+	top: 100px;
+	background: #f7f7f7;
+	border: 10px solid #fff;
+	left: 50px;
+	opacity: 1;
+}
+#delete_div span{
+	display: block;
+	width: 400px;
+	height: 130px;
+	font-size: 36px;
+	text-align: center;
+	line-height: 130px;
+	color: red;
+}
+#delete_confirm{
+	border: none;
+	display: block;
+	width: 150px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 40px;
+	background: #d36e6e;
+}
+#delete_concel{
+	border: none;
+	display: block;
+	width: 150px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 10px;
+	background: #efad62;
+}
+.judge_table tr{
+	display: block;
+	height: 40px;
+	line-height:40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.judge_table td{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+#judge_div{
+	display: none;
+	position: absolute;
+	width: 500px;
+	height: 550px;
+	left: 0px;
+	top: 0px;
+	background: #f7f7f7;
+	border: 10px solid #fff;
+}
+.judge_title,.judge_teacher,.judge_course{
+	display: block;
+	width: 500px;
+	height: 60px;
+	font-size: 20px;
+	color: #478fca;
+	text-align: center;
+	line-height: 60px;
+}
+.judge_title{
+	font-weight: bold;
+	font-size: 24px;
+}
+.judge_area{
+	width: 500px;
+	height: 60px;
+	font-size: 16px;
+	color: #478fca;
+	line-height: 60px;
+	text-align: center;
+}
+.judge_area span{
+	float: left;
+	display: block;
+	width: 220px;
+	height: 60px;
+	text-align: right;
+	line-height: 60px;
+}
+#judge_submit{
+	float: left;
+	display: block;
+	border: none;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 130px;
+	margin-top: 10px;
+	background: #6fb3e0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+#judge_cancel{
+	display: block;
+	border: none;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 270px;
+	margin-top: 10px;
+	background: #87b87f;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fff;
+}
+#query_back_home:hover,#delete_confirm:hover,#delete_concel:hover,#judge_back_home:hover,#judge_submit:hover,#judge_cancel:hover{
+	background:#d15b47;
+}
+.judge_area ul{
+	margin: 10px;
+	width: 200px;
+	height: 40px;
+	float: left;
+}
+.judge_area li{
+	width: 40px;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+}
+.judge_area img{
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 4px;
+}
+textarea{
+	width: 430px;
+	height: 60px;
+}
+#index_div{
+	display: block;
+	position: absolute;
+	width: 1080px;
+	height: 500px;
+	min-height: 500px;
+	text-align: center;
+	border-top:1px solid #cccccc;
+	background: #62a8d1;
+	font-size: 80px;
+	line-height: 500px;
+	left: 0;
+	top: 0;
+	color: #fff;	
+}
+.courseInfoDiv{
+	width:800px;
+	height:auto;
+	background: #f7f7f7;
+	border: 10px solid #fff;
+}
+.courseInfoDiv table{
+	
+}
+.courseInfoDiv tr{
+	height:100px;
+	
+}
+
+
+

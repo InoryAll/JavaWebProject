@@ -1,0 +1,77 @@
+package com.service;
+
+import java.util.List;
+
+import com.dao.CourseDao;
+import com.entity.Course;
+import com.entity.Pager;
+import com.entity.SCFactRelation;
+import com.entity.SCReRelation;
+
+public class CourseService {
+	private CourseDao courseDao;
+	private SCFactRelationService scfrs;
+	private SCReRelationService scrrs;
+	
+	public CourseService(){
+		courseDao = new CourseDao();
+		scfrs = new SCFactRelationService();
+		scrrs = new SCReRelationService();
+	}
+	
+	public Pager<Course> findCourseForPager(Course CourseModel, int pageNum, int pageSize){
+		Pager<Course> result = courseDao.findCourseForPager(CourseModel, pageNum,
+				pageSize);
+		return result;
+	}
+	
+	public Pager<Course> StufindCourseForPager(String sid,Course CourseModel, int pageNum, int pageSize){
+		
+		List<Integer> cid = scrrs.findCidbySid(sid); 
+		
+		Pager<Course> result = courseDao.findCourseGiveUpRepeatForPager(cid,CourseModel, pageNum,
+				pageSize);
+		
+		return result;
+	}
+	
+	//修改信息
+	public boolean updateCourse(Course course){
+		if(courseDao.update(course)){
+			return true;
+		}
+		return false;
+	}
+	//学生预定选课
+	public boolean selectReCourse(SCReRelation scrr){
+		scrrs.insertSCReRelation(scrr);
+		return false;
+	}
+	//学生实际选课
+	public boolean selectFactCourse(SCFactRelation scfr){
+		scfrs.insertSCFactRelation(scfr);
+		return false;
+	}
+	//老师加课
+	public boolean addCourse(Course course){
+		if(courseDao.insert(course))
+			return true;
+		return false;
+	}
+	public boolean deleteCourse(int id){
+		Course c = new Course();
+		c.setId(id);
+		return courseDao.delete(c);
+	}
+	public  Course findOneCourse(int id){
+		return courseDao.findCourseById(id);
+	}
+
+	public List<String> findAllName() {
+		// TODO Auto-generated method stub
+
+		return courseDao.findAllName();
+	}
+	
+
+}

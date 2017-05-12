@@ -1,0 +1,384 @@
+/*regedit.js*/
+window.onload=function(){
+	
+	var regedit_table1=document.getElementById('regedit_table1');
+	var regedit_table2=document.getElementById('regedit_table2');
+	var regedit_table3=document.getElementById('regedit_table3');
+	var main=document.getElementById('main');
+	var table_box=document.getElementById('table_box');
+	var oHeader=document.getElementById('header');
+	var oFooter=document.getElementById('footer');
+	var preHeight;
+	var oHeightChange;
+	var aPreA=getElementsByClass('pre');
+	var aNextA=getElementsByClass('next');
+	var thisPage;
+	var aInput=document.getElementsByTagName('input');
+	var arrInputs=[];
+	var oUl=document.getElementById('nav');
+	var aLi=oUl.getElementsByTagName('li');
+	var aDiv=null;
+	var isSucceed=document.getElementById('isSucceed');
+	var oForm=document.getElementById('regedit_form');
+	var message=document.getElementById('message');
+	var arrSelect=document.getElementsByTagName('select');
+	var arrRadio=[];
+	if(isSucceed.value==1)
+	{
+		initPage(1);
+	}
+	initWindow();
+	window.onresize=function(){
+		initWindow();
+	}
+	aPreA[0].style.background='#c8d2d8';
+	for(var i=0;i<aInput.length;i++)
+	{
+		if(aInput[i].type=='text'||aInput[i].type=='password')
+		{
+			arrInputs.push(aInput[i]);
+		}
+		else
+		{
+			if(aInput[i].type=='radio')
+				arrRadio.push(aInput[i]);
+		}
+	}
+	arrRadio[0].checked=true;
+
+	for (var i = 0; i < arrSelect.length; i++) {
+		arrSelect[i][0].selected=true;
+		arrSelect[i].onchange=function(){
+			if(this.value=='')
+			{
+				this.nextElementSibling.innerHTML='请选择有效值';
+			}
+			else
+			{
+				this.nextElementSibling.innerHTML='';
+			}
+		}
+	}
+
+	for (var i = 0; i < arrInputs.length; i++) {
+		arrInputs[i].value='';
+		arrInputs[i].index=i;
+		arrInputs[i].onfocus=function(){
+			arrInputs[this.index].parentNode.style.border='2px solid #e3c94c';
+		}
+		arrInputs[i].onblur=function(){
+			arrInputs[this.index].parentNode.style.border='2px solid #d5d5d5';
+		}
+		arrInputs[i].oninput=function(){
+			if(this.value.length<6)
+			{
+				this.parentNode.nextElementSibling.innerHTML='输入的长度不得小于6位';
+			}
+			else
+			{
+				this.parentNode.nextElementSibling.innerHTML='';
+			}
+		}
+	}
+	arrInputs[1].oninput=function(){
+		if(this.value.length<2)
+			{
+				this.parentNode.nextElementSibling.innerHTML='输入的格式不符合要求';
+			}
+			else
+			{
+				this.parentNode.nextElementSibling.innerHTML='';
+			}
+	}
+	arrInputs[2].oninput=function(){
+		if(this.value.length<6)
+		{
+			this.parentNode.nextElementSibling.innerHTML='输入的格式不符合要求';
+		}
+		else
+		{	
+			this.parentNode.nextElementSibling.innerHTML='';
+			if(arrInputs[3].value!=arrInputs[2].value)
+			{
+				arrInputs[3].parentNode.nextElementSibling.innerHTML='两次输入密码不一致';
+			}
+			else
+			{
+				arrInputs[3].parentNode.nextElementSibling.innerHTML='';
+			}
+		}
+	}
+	arrInputs[3].oninput=function(){
+		if(this.value.length<6)
+		{
+			this.parentNode.nextElementSibling.innerHTML='输入的格式不符合要求';
+		}
+		else
+		{
+			if(arrInputs[3].value!=arrInputs[2].value)
+			{
+				this.parentNode.nextElementSibling.innerHTML='两次输入密码不一致';
+			}
+			else
+			{
+				this.parentNode.nextElementSibling.innerHTML='';
+			}
+		}
+	}
+	arrInputs[0].focus();
+
+	for (var i = 0; i < aPreA.length; i++) {
+		aPreA[i].onclick=function(){
+			preTable();
+		}
+	}
+
+	for(var i=0;i<aNextA.length;i++)
+	{
+		aNextA[i].onclick=function(){
+			nextTable();
+		}
+	}
+
+	oForm.onsubmit=function(){
+		
+		for(var i=0;i<arrInputs.length;i++)
+		{
+			if(i==1)
+			{
+				if(arrInputs[1].value.length<2)
+				{
+					message.innerHTML='输入的格式不正确';
+					return false;
+				}		
+			}
+			if(i==3)
+			{
+				if(arrInputs[3].value!=arrInputs[2].value)
+				{
+					message.innerHTML='输入的格式不正确';
+					return false;
+				}
+				
+			}
+			if(arrInputs[i].value.length<6&&i!=1&&i!=3)
+			{
+				message.innerHTML='输入的格式不正确';
+				return false;
+			}
+		}
+		
+		for(var i=0;i<arrSelect.length;i++)
+		{
+			if(arrSelect[i].value=='')
+			{
+				message.innerHTML='输入的格式不正确';
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	function initPage(pageNum){
+		thisPage=pageNum;
+		switch(thisPage){
+			case 1: regedit_table1.style.display='block';
+					regedit_table2.style.display='none';
+					regedit_table3.style,display='none';
+					for(var i=0;i<thisPage;i++)
+					{
+						aDiv=aLi[i].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#5293c4';
+							aDiv[j].style.color='#2b3d58';
+						}
+					}
+					break;
+			case 2: regedit_table1.style.display='none';
+					regedit_table2.style.display='block';
+					regedit_table3.style,display='none';
+					for(var i=0;i<thisPage;i++)
+					{
+						aDiv=aLi[i].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#5293c4';
+							aDiv[j].style.color='#2b3d58';
+						}
+					}
+					break;
+			case 3: regedit_table1.style.display='none';
+					regedit_table2.style.display='none';
+					regedit_table3.style.display='block';
+					for(var i=0;i<thisPage;i++)
+					{
+						aDiv=aLi[i].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#5293c4';
+							aDiv[j].style.color='#2b3d58';
+						}
+					}
+					break;
+		}
+	}
+	function nextTable(){
+		switch(thisPage)
+		{
+			case 1: regedit_table1.style.display='none';
+					regedit_table2.style.display='block';
+					thisPage++;
+					for(var i=0;i<thisPage;i++)
+					{
+						aDiv=aLi[i].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#5293c4';
+							aDiv[j].style.color='#2b3d58';
+						}
+					}
+					break;
+			case 2: regedit_table2.style.display='none';
+					regedit_table3.style.display='block';
+					thisPage++;
+					for(var i=0;i<thisPage;i++)
+					{
+						aDiv=aLi[i].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#5293c4';
+							aDiv[j].style.color='#2b3d58';
+						}
+					}
+					break;
+		}
+	}
+	function preTable(){
+		switch(thisPage)
+		{
+			case 2: regedit_table1.style.display='block';
+					regedit_table2.style.display='none';
+					thisPage--;
+					for(var i=2;i>thisPage;i--)
+					{
+						aDiv=aLi[i-1].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#ced1d6';
+							aDiv[j].style.color='#949ea7';
+						}
+					}
+					break;
+			case 3: regedit_table2.style.display='blcok';
+					regedit_table3.style.display='none';
+					for(var i=2;i>thisPage;i--)
+					{
+						aDiv=aLi[i-1].getElementsByTagName('div');
+						for(var j=0;j<aDiv.length;j++)
+						{
+							aDiv[j].style.borderColor='#ced1d6';
+							aDiv[j].style.color='#949ea7';
+						}
+					}
+					break;
+		}
+	}
+	function getDisplay(obj){
+		return obj.currentStyle?obj.currentStyle['display']:getComputedStyle(obj)['display'];
+	}
+	function getStyle(obj,attr){
+		return obj.currentStyle?parseInt(obj.currentStyle[attr]):parseInt(getComputedStyle(obj)[attr]);
+	}
+	function initWindow(){
+		preHeight=getStyle(main,'height');	
+		main.style.height=document.documentElement.offsetHeight-getStyle(oHeader,'height')-getStyle(oFooter,'height')+'px';
+		oHeightChange=getStyle(main,'height')-preHeight;
+		table_box.style.top=getStyle(table_box,'top')+oHeightChange/2+'px';
+	}
+}
+
+function getElementsByClass(className){
+	var aEls=document.getElementsByTagName('*');
+	var arrEls=[];
+	var arrStr;
+	for(var i=0;i<aEls.length;i++)
+	{
+		arrStr=aEls[i].className.split(' ');
+		for(var j=0;j<arrStr.length;j++)
+		{
+			if(arrStr[j]==className)
+			{
+				arrEls.push(aEls[i]);
+			}
+		}
+		
+	}
+	return arrEls;
+}
+function initPageNew(pageNum){
+	var regedit_table1=document.getElementById('regedit_table1');
+	var regedit_table2=document.getElementById('regedit_table2');
+	var regedit_table3=document.getElementById('regedit_table3');
+	var main=document.getElementById('main');
+	var table_box=document.getElementById('table_box');
+	var oHeader=document.getElementById('header');
+	var oFooter=document.getElementById('footer');
+	var preHeight;
+	var oHeightChange;
+	var aPreA=getElementsByClass('pre');
+	var aNextA=getElementsByClass('next');
+	var thisPage;
+	var aInput=document.getElementsByTagName('input');
+	var arrInputs=[];
+	var oUl=document.getElementById('nav');
+	var aLi=oUl.getElementsByTagName('li');
+	var aDiv=null;
+	var isSucceed=document.getElementById('isSucceed');
+	var oForm=document.getElementById('regedit_form');
+	var message=document.getElementById('message');
+	var arrSelect=document.getElementsByTagName('select');
+	var arrRadio=[];
+	switch(pageNum){
+		case 1: regedit_table1.style.display='block';
+				regedit_table2.style.display='none';
+				regedit_table3.style,display='none';
+				for(var i=0;i<pageNum;i++)
+				{
+					aDiv=aLi[i].getElementsByTagName('div');
+					for(var j=0;j<aDiv.length;j++)
+					{
+						aDiv[j].style.borderColor='#5293c4';
+						aDiv[j].style.color='#2b3d58';
+					}
+				}
+				break;
+		case 2: regedit_table1.style.display='none';
+				regedit_table2.style.display='block';
+				regedit_table3.style,display='none';
+				for(var i=0;i<pageNum;i++)
+				{
+					aDiv=aLi[i].getElementsByTagName('div');
+					for(var j=0;j<aDiv.length;j++)
+					{
+						aDiv[j].style.borderColor='#5293c4';
+						aDiv[j].style.color='#2b3d58';
+					}
+				}
+				break;
+		case 3: regedit_table1.style.display='none';
+				regedit_table2.style.display='none';
+				regedit_table3.style.display='block';
+				for(var i=0;i<pageNum;i++)
+				{
+					aDiv=aLi[i].getElementsByTagName('div');
+					for(var j=0;j<aDiv.length;j++)
+					{
+						aDiv[j].style.borderColor='#5293c4';
+						aDiv[j].style.color='#2b3d58';
+					}
+				}
+				break;
+	}
+}

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+			<a class="user" href="javascript:;">
+				欢迎您,XXX用户
+			</a>
+		</div>
+	</div>
+	<div id="main_box">
+		<form action="" method="post" id="index_form" name="index_form">
+		<!--隐藏的hidden域，用来记录操作类型-->
+		<input type="hidden" name="action" id="action" value=-1>
+			<div id="main">
+				<div id="main_left">
+					<ul id="list">
+						<li class="first_li">
+							<a href="login.html" class="re_login">
+								注销
+							</a>
+							<a href="regedit.html" class="go_regedit">
+								注册
+							</a>
+						</li>
+						<li class="first_menu">
+							<span class="menu_1">
+								<img src="images/menu1.png">
+								基本信息查询
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---查看个人信息
+								</li>
+							</ul>
+						</li>
+						<li class="first_menu">
+							<span class="menu_2">
+							<img src="images/menu2.png">
+								学生选课
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---选课
+								</li>
+								<li>
+									|---查看已选课程
+								</li>
+							</ul>
+						</li>
+						<li class="last_li first_menu">
+							<span class="menu_3">
+							<img src="images/menu3.png">
+								课程评价
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---评价
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="main_right">
+					<div class="top_menu" id="top_menu">
+						<span id="location">
+							首页
+						</span>
+					</div>
+
+					<div id="index_div">
+						Hello World!
+					</div>
+
+					<table class="search_table" id="search_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td>
+									查看个人信息
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="tip">* 单击以进行修改,注意:用户名无法进行修改</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										用户:
+									</span>
+									<div class="input_div id_div">
+										<input type="text" name="id" readonly="true"  value="12345">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										密码:
+									</span>
+									<div class="input_div">
+										<input type="password" name="password" value="123456">
+									</div>								
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										姓名:
+									</span>
+									<div class="input_div">
+										<input type="text" name="name" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										性别:
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" checked value="male">&nbsp;&nbsp;男
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" value="female">&nbsp;&nbsp;女
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										邮箱:
+									</span>
+									<div class="input_div">
+										<input type="text" name="email" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										电话:
+									</span>
+									<div class="input_div">
+										<input type="text" name="tel" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										院系:
+									</span>
+									<div class="select_div">
+										<select class="select_list">
+											<option>信息工程学院</option>
+											<option>机械学院</option>
+											<option>物理学院</option>
+										</select>
+									</div>	
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										专业:
+									</span>
+									<div class="select_div">
+										<select class="select_list">
+											<option>软件工程</option>
+											<option>计算机科学与技术</option>
+											<option>通信工程</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										班级:
+									</span>
+									<div class="select_div">
+										<select class="select_list">
+											<option>141</option>
+											<option>142</option>
+											<option>143</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr class="last_tr">
+								<td>
+									<input type="button" name="" value="修改" id="regedit_btn">
+									<a href="index.html" id="back_to_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="search_table select_table" id="select_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+									选课
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" id="query_info">
+									<select class="query_select">
+										<option>按照课程名查询</option>
+										<option>高级语言程序设计</option>
+										<option>数据库原理</option>
+									</select>
+									<select class="query_select">
+										<option>按照老师查询</option>
+										<option>秦静</option>
+										<option>张敏</option>
+									</select>
+								</td>
+								<td colspan="3" id="query_place">
+									<div class="search_btn_div">
+										<input type="text" name="" placeholder="按课程名搜索">
+									</div>
+									<a href="javascript:;" class="search_btn">搜索</a>
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>是否选课</th>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									<a href="javascript:;">数据结构</a>
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									<a href="javascript:;">张敏</a>
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									<input type="checkbox" name="lesson">
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="index.html" id="select_back_home">返回</a>
+									<input type="button" name="" value="提交" id="select_submit">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!--新增代码区域-->
+					
+					<table class="search_table query_table" id="query_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								已选课程
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>退选</th>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									<a href="javascript:;">数据结构</a>
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									<a href="javascript:;">张敏</a>
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									<a href="javascript:;" class="do_delete">退选</a>
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="index.html" id="query_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!--新增代码区域-->
+					<table class="search_table judge_table" id="judge_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								评教
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>评教</th>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									<a href="javascript:;">数据结构</a>
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									<a href="javascript:;">张敏</a>
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									<a href="javascript:;" class="do_judge">评价</a>
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="index.html" id="judge_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+						
+
+					<div id="footer_box">
+
+						<div id="footer">
+							<div class="split_bottom"></div>
+							<p id="copy">
+							</p>
+						</div>
+					</div>
+
+					<!--新增代码区域-->
+					
+					<div id="delete_div">
+						<span>您确定要删除么？</span>
+						<input type="hidden" name="delete_item" id="delete_item" value=''>
+						<input type="submit" name="" id="delete_confirm" value="确定">
+						<input type="button" id="delete_concel" value="取消">
+					</div>
+					
+					<div id="judge_div">
+						<span class="judge_title">请对此课程作评价</span>
+						<input type="hidden" name="judge_item" id="judge_item" value=''>
+						<input type="hidden" name="judge_detail" id="judge_detail" value=''> 
+						<span class="judge_teacher">教师：</span>
+						<span class="judge_course">课程：</span>
+						<div class="judge_area">
+							<span>教师本人知识丰富程度：</span>
+							<ul>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+							</ul>
+						</div>
+						<div class="judge_area">
+							<span>教师课堂表现力：</span>
+							<ul>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+							</ul>
+						</div>
+						<div class="judge_area">
+							<span>内容实用性：</span>
+							<ul>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+							</ul>
+						</div>
+						<div class="judge_area">
+							<span>课堂的交互性：</span>
+							<ul>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+								<li>
+									<img src="images/star.png">
+								</li>
+							</ul>
+						</div>
+						<div class="judge_area">
+							<textarea cols="50" rows="2" placeholder="请输入你的额外评价内容" name="extra_content"></textarea>
+						</div>
+						<input type="button" value="提交" id="judge_submit">
+						<input type="button" value="取消" id="judge_cancel">
+					</div>
+					
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

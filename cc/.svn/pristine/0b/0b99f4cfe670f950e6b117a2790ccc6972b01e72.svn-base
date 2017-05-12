@@ -1,0 +1,37 @@
+package com.service;
+
+import com.dao.StudentDao;
+import com.entity.Student;
+import com.entity.Pager;
+
+public class StudentService {
+	private StudentDao studentDao;
+	
+	public StudentService(){
+		studentDao = new StudentDao();
+	}
+	
+	public Pager<Student> findStudentForPager(Student studentModel, int pageNum, int pageSize){
+//		Pager<Student> result = StudentDao.findStudentForPager(studentModel, pageNum,
+//				pageSize);
+//		return result;
+		return null;
+	}
+	//修改信息
+	public boolean updateStudent(Student student){
+		if(studentDao.update(student)){
+			return true;
+		}
+		return false;
+	}
+	
+	public Student findStudentById(String id){
+		Student stuMatch = studentDao.findStudentById(id);
+		return stuMatch;
+	}
+	
+	public boolean insert(Student student){
+		return studentDao.insert(student);
+	}
+
+}

@@ -1,0 +1,109 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/login.js"></script>
+</head>
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+		</div>
+	</div>
+	<div id="main_box">
+		<div id="main">
+			<form action="${pageContext.request.contextPath}/user/UserAction?action=login" method="post" id="login_form">
+				<div id="main_left">
+					<div class="picTab_box" id="picTab_box">
+						<ul id="picTab">
+							<li>
+								<img src="${pageContext.request.contextPath}/images/1.jpg">
+							</li>
+							<li>
+								<img src="${pageContext.request.contextPath}/images/2.jpg">
+							</li>
+							<li>
+								<img src="${pageContext.request.contextPath}/images/3.jpg">
+							</li>
+						</ul>
+					</div>
+					<ul id="scrollTab">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div id="main_right">
+						<input type="hidden" name="user" value="0" id="user">	
+						<input type="hidden" name="action" value="login" id="action">
+						<table class="login_table" id="login_table">
+							<thead></thead>
+							<tbody>
+								<tr>
+									<td id="login_title">
+										<h1>登录</h1>	
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="split">		
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="username_div">
+											<input type="text" name="id" placeholder="Username">
+											<span>
+												<img src="${pageContext.request.contextPath}/images/username.png">
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="password_div">
+											<input type="password" name="password" placeholder="Password">
+											<span>
+												<img src="${pageContext.request.contextPath}/images/password.png">
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span id="message">
+										</span>
+										<span id="ReturnMessage">
+											${Message}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href="${pageContext.request.contextPath}/user/regedit.jsp" id="regedit">立即注册</a>
+										<input type="submit" value="登&nbsp;&nbsp;录" id="login_btn">
+									</td>
+								</tr>
+							</tbody>
+						</table>	
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="footer_box">
+		<div id="footer">
+			<div class="split_bottom">
+			</div>
+			<p id="copy">
+			</p>
+		</div>
+	</div>
+</body>
+</html>

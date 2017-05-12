@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/teacher.css">
+	<script type="text/javascript" src="js/teacher.js"></script>
+</head>
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+			<a class="user" href="javascript:;">
+				欢迎您,XXX用户
+			</a>
+		</div>
+	</div>
+	<div id="main_box">
+		<form action="" method="post" id="index_form" name="index_form">
+		<!--隐藏的hidden域，用来记录操作类型-->
+		<input type="hidden" name="action" id="action" value="">
+			<div id="main">
+				<div id="main_left">
+					<ul id="list">
+						<li class="first_li">
+							<a href="login.html" class="re_login">
+								注销
+							</a>
+							<a href="regedit.html" class="go_regedit">
+								注册
+							</a>
+						</li>
+						<li class="first_menu">
+							<span class="menu_1">
+								<img src="images/menu1.png">
+								基本信息查询
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---查看个人信息
+								</li>
+							</ul>
+						</li>
+						<li class="first_menu">
+							<span class="menu_2">
+							<img src="images/menu2.png">
+								课程管理
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---添加课程
+								</li>
+								<li>
+									|---删除课程
+								</li>
+							</ul>
+						</li>
+						<li class="last_li first_menu">
+							<span class="menu_3">
+							<img src="images/menu3.png">
+								学生管理
+							</span>
+							<ul class="second_menu">
+								<li>
+									|---管理学生
+								</li>
+								<li>
+									|---登记成绩
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="main_right">
+					<div class="top_menu" id="top_menu">
+						<span id="location">
+							首页
+						</span>
+					</div>
+
+					<div id="index_div">
+						Hello World!
+					</div>
+
+					<table class="search_table" id="search_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td>
+									查看个人信息
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="tip">* 单击以进行修改,注意:用户名无法进行修改</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										用户:
+									</span>
+									<div class="input_div id_div">
+										<input type="text" name="id" readonly="true"  value="12345">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										密码:
+									</span>
+									<div class="input_div">
+										<input type="password" name="password" value="123456">
+									</div>								
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										姓名:
+									</span>
+									<div class="input_div">
+										<input type="text" name="name" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										性别:
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" checked value="male">&nbsp;&nbsp;男
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" value="female">&nbsp;&nbsp;女
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										QQ或者微信:
+									</span>
+									<div class="input_div">
+										<input type="text" name="onlinetool" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										邮箱:
+									</span>
+									<div class="input_div">
+										<input type="text" name="email" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										电话:
+									</span>
+									<div class="input_div">
+										<input type="text" name="tel" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										民族:
+									</span>
+									<div class="input_div">
+										<input type="text" name="nation" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										职称:
+									</span>
+									<div class="input_div">
+										<input type="text" name="title" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										部门:
+									</span>
+									<div class="input_div">
+										<input type="text" name="department" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										擅长领域:
+									</span>
+									<div class="input_div">
+										<input type="text" name="goodfield" value="123456">
+									</div>
+								</td>
+							</tr>
+							<tr class="last_tr">
+								<td>
+									<input type="button" name="" value="修改" id="regedit_btn">
+									<a href="teacher.html" id="back_to_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="search_table add_table" id="add_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+									添加课程
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>添加课程</th>
+							</tr>
+							<tr class="single active">
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入课程号">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入课程名">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入教师号">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入教师名">
+									</div>
+								</td>
+								<td>
+									<select class="add_select">
+										<option value="1">周一</option>
+										<option value="2">周二</option>
+										<option value="3">周三</option>
+										<option value="4">周四</option>
+										<option value="5">周五</option>
+										<option value="6">周六</option>
+										<option value="7">周日</option>
+									</select>
+									<select class="add_select">
+										<option value="1.2">1-2节</option>
+										<option value="3.4">3-4节</option>
+										<option value="5.6">5-6节</option>
+										<option value="7.8">7-8节</option>
+										<option value="9.10">9-10节</option>
+									</select>
+								</td>
+								<td>
+									<input type="button" name="" value="添加" class="add_btn">
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+							</tr>
+							<tr class="last_tr">
+								<td colspan="6">
+									<a href="teacher.html" class="add_back">返回</a>
+								</td>	
+							</tr>
+						</tbody>
+					</table>
+	
+					<table class="search_table delete_table" id="delete_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								删除课程
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>删除</th>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									<a href="javascript:;">数据结构</a>
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									<a href="javascript:;">张敏</a>
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									<a href="javascript:;" class="do_delete">删除</a>
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="teacher.html" id="query_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				
+					<table class="search_table manage_table" id="manage_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								学生管理
+								</td>
+							</tr>
+							<tr class="limit">
+								<td>
+									课号：1111111111
+								</td>
+								<td>
+									<select>
+										<option>数据结构</option>
+										<option>离散数学</option>
+										<option>1321321</option>
+										<option>454343543</option>
+									</select>
+								</td>
+								<td>
+									<a href="#">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>邮箱</th>
+								<th>电话</th>
+								<th>院系</th>
+								<th>专业班级</th>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="single">
+								<td>
+									1
+								</td>
+								<td>
+									2
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									4
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									6
+								</td>
+								<td>
+									1
+								</td>
+							</tr>
+							<tr class="double">
+								<td>
+									11
+								</td>
+								<td>
+									22
+								</td>
+								<td>
+									33
+								</td>
+								<td>
+									44
+								</td>
+								<td>
+									55
+								</td>
+								<td>
+									66
+								</td>
+								<td>
+									11
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="teacher.html" id="judge_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="search_table grade_table" id="grade_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								成绩登记
+								</td>
+							</tr>
+							<tr class="limit">
+								<td >
+									课号：1111111111
+								</td>
+								<td>
+									<select>
+										<option>数据结构</option>
+										<option>离散数学</option>
+										<option>1321321</option>
+										<option>454343543</option>
+									</select>
+								</td>
+								<td>
+									<a href="#">登记</a>
+								</td>
+							</tr>
+							<tr>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>院系</th>
+								<th>专业</th>
+								<th>班级</th>
+								<th>分数</th>
+							</tr>
+							<tr>
+								<td>
+									111
+								</td>
+								<td>
+									111
+								</td>
+								<td>
+									111
+								</td>
+								<td>
+									111
+								</td>
+								<td>
+									111
+								</td>
+								<td>
+									111
+								</td>
+								<td>
+									<div class="grade_input_div">
+										<input type="text" name="" placeholder="填写成绩">
+									</div>
+								</td>
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<input type="button" name="" value="提交">
+									<a href="teacher.html" id="judge_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+						
+					<div id="footer_box">
+						<div id="footer">
+							<div class="split_bottom"></div>
+							<p id="copy">
+							</p>
+						</div>
+					</div>
+
+					<div id="delete_div">
+						<span>您确定要删除么？</span>
+						<input type="hidden" name="delete_item" id="delete_item" value=''>
+						<input type="button" name="" id="delete_confirm" value="确定">
+						<input type="button" id="delete_concel" value="取消">
+					</div>
+						
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

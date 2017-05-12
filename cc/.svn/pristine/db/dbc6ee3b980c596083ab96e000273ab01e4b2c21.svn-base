@@ -1,0 +1,654 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+     <%@ page 
+    	import="com.entity.*"
+    	import="com.args.Constant"
+    	import="java.util.List"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大连大学创新选课系统</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/teacher.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/teacher.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+	<%
+		Pager<Course> CourseResult = (Pager<Course>) request.getAttribute("CourseResult");
+		Pager<Student> StudentResult = (Pager<Student>) request.getAttribute("StudentResult");
+	 	List<String> CourseName = (List<String>) request.getAttribute("CourseName");
+	 %>
+</head>
+<script>
+	var basePath="${pageContext.request.contextPath}";
+	$(document).ready(function(){
+		/* $.ajax({
+			url:basePath+'/user/TeacherAction',
+			type:'POST',
+			data:{
+				action:'add',
+				cname:'jianghaifeng',
+				cdate:'1999.9.99',
+				first:'false'
+			},
+			success:function(data){
+				alert(data);
+			},
+			error:function(error){
+			
+			}
+		}); */
+		/*右侧菜单图片显示问题*/
+		var oSecond_menu=$('.second_menu');
+		for(var i=0;i<oSecond_menu.length;i++){
+			for(var j=0;j<oSecond_menu[i].children.length;j++)
+			{
+				oSecond_menu[i].children[j].index=j;
+				oSecond_menu[i].children[j].onmouseover=function(){
+					this.style.color='#2b7dbc';
+					this.style.background='url(\''+basePath+'/images/menu_select.png\') no-repeat #f5f7fa 192px 7px';
+					this.style.borderLeft='2px solid #c86139';
+				}
+				oSecond_menu[i].children[j].onmouseout=function(){
+					this.style.color='#585858';
+					this.style.background='#fff';
+					this.style.borderLeft='none';
+				}
+			}
+		}
+		
+		/*查看个人信息*/
+		$('#search').on('mousedown',function(){
+		
+			$.ajax({
+				url:basePath+'/user/TeacherAction',
+				data:{
+					action:'modify',
+					first:'true',
+				},
+				type:'POST',
+				success:function(data){
+					data=JSON.parse(data);
+					$('input[name=id]').val(data.id);
+					$('input[name=password]').val(data.password);
+					$('input[name=name]').val(data.name);
+					if(data.gender=='男')
+					{
+						$('input[value=男]').attr('checked',true);
+					}
+					else
+					{
+						$('input[value=女]').attr('checked',true);
+					}
+					$('input[name=onlinetool]').val(data.onlinetool);
+					$('input[name=email]').val(data.email);
+					$('input[name=tel]').val(data.tel);
+					$('input[name=nation]').val(data.nation);
+					$('input[name=title]').val(data.title);
+					$('input[name=department]').val(data.department);
+					$('input[name=goodfield]').val(data.goodfield);
+				},
+				error:function(error){
+				
+				}
+			});
+		
+		});
+		
+		/*修改个人信息*/
+		$('#regedit_btn').on('mousedown',function(){
+			$.ajax({
+				url:basePath+'/user/TeacherAction',
+				data:{
+					action:'modify',
+					first:'false',
+					id:$('input[name=id]').val(),
+					password:$('input[name=password]').val(),
+					name:$('input[name=name]').val(),
+					gender:$('input[type=radio]:checked').val(),
+					onlinetool:$('input[name=onlinetool]').val(),
+					email:$('input[name=email]').val(),
+					tel:$('input[name=tel]').val(),
+					nation:$('input[name=nation]').val(),
+					title:$('input[name=title]').val(),
+					department:$('input[name=department]').val(),
+					goodfield:$('input[name=goodfield]').val()
+				},
+				type:'POST',
+				success:function(data){
+					alert(data);
+				},
+				error:function(error){
+					
+				}
+			});
+		});
+	});
+
+</script>
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+			<a class="user" href="javascript:;">
+				欢迎您,XXX用户
+			</a>
+		</div>
+	</div>
+	<div id="main_box">
+		<form action="${pageContext.request.contextPath}/user/TeacherAction?action=delete" method="post" id="index_form" name="index_form">
+		<!--隐藏的hidden域，用来记录操作类型-->
+		<input type="hidden" name="action" id="action" value="">
+			<div id="main">
+				<div id="main_left">
+					<ul id="list">
+						<li class="first_li">
+							<a href="${pageContext.request.contextPath}/user/login.jsp" class="re_login" id="re_login">
+								注销
+							</a>
+						</li>
+						<li class="first_menu">
+							<span class="menu_1">
+								<img src="${pageContext.request.contextPath}/images/menu1.png">
+								基本信息查询
+							</span>
+							<ul class="second_menu">
+								<li id="search">
+									|---查看个人信息
+								</li>
+							</ul>
+						</li>
+						<li class="first_menu">
+							<span class="menu_2">
+							<img src="${pageContext.request.contextPath}/images/menu2.png">
+								课程管理
+							</span>
+							<ul class="second_menu">
+								<li id="add">
+									|---添加课程
+								</li>
+								<li id="delete">
+									|---删除课程
+								</li>
+							</ul>
+						</li>
+						<li class="last_li first_menu">
+							<span class="menu_3">
+							<img src="${pageContext.request.contextPath}/images/menu3.png">
+								学生管理
+							</span>
+							<ul class="second_menu">
+								<li id="manage">
+									|---管理学生
+								</li>
+								<li id="checkout">
+									|---登记成绩
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="main_right">
+					<div class="top_menu" id="top_menu">
+						<span id="location">
+							首页
+						</span>
+					</div>
+
+					<div id="index_div">
+						Hello World!
+					</div>
+
+					<table class="search_table" id="search_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td>
+									查看个人信息
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="tip">* 单击以进行修改,注意:用户名无法进行修改</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										用户:
+									</span>
+									<div class="input_div id_div">
+										<input type="text" name="id" readonly="true"  value="${teacher.id}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										密码:
+									</span>
+									<div class="input_div">
+										<input type="password" name="password" value="${teacher.password}">
+									</div>								
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										姓名:
+									</span>
+									<div class="input_div">
+										<input type="text" name="name" value="${teacher.name}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										性别:
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" checked value="男">&nbsp;&nbsp;男
+									</span>
+									<span class="radio_span">
+										<input type="radio" name="gender" value="女">&nbsp;&nbsp;女
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										QQ或者微信:
+									</span>
+									<div class="input_div">
+										<input type="text" name="onlinetool" value="${teacher.onlinetool}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										邮箱:
+									</span>
+									<div class="input_div">
+										<input type="text" name="email" value="${teacher.email}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										电话:
+									</span>
+									<div class="input_div">
+										<input type="text" name="tel" value="${teacher.tel}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										民族:
+									</span>
+									<div class="input_div">
+										<input type="text" name="nation" value="${teacher.nation}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										职称:
+									</span>
+									<div class="input_div">
+										<input type="text" name="title" value="${teacher.title}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										部门:
+									</span>
+									<div class="input_div">
+										<input type="text" name="department" value="${teacher.department}">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										擅长领域:
+									</span>
+									<div class="input_div">
+										<input type="text" name="goodfield" value="${teacher.goodfield}">
+									</div>
+								</td>
+							</tr>
+							<tr class="last_tr">
+								<td>
+									<input type="button" name="" value="修改" id="regedit_btn">
+									<a href="teacher.html" id="back_to_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="search_table add_table" id="add_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+									添加课程
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>添加课程</th>
+							</tr>
+							<tr class="single active">
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="cid" placeholder="请输入课程号">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="cname" placeholder="请输入课程名">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入教师号">
+									</div>
+								</td>
+								<td>
+									<div class="add_input_div">
+										<input type="text" name="" placeholder="请输入教师名">
+									</div>
+								</td>
+								<td>
+									<select class="add_select">
+										<option value="1">周一</option>
+										<option value="2">周二</option>
+										<option value="3">周三</option>
+										<option value="4">周四</option>
+										<option value="5">周五</option>
+										<option value="6">周六</option>
+										<option value="7">周日</option>
+									</select>
+									<select class="add_select">
+										<option value="1.2">1-2节</option>
+										<option value="3.4">3-4节</option>
+										<option value="5.6">5-6节</option>
+										<option value="7.8">7-8节</option>
+										<option value="9.10">9-10节</option>
+									</select>
+								</td>
+								<td>
+									<input type="submit" name="" value="添加" class="add_btn">
+								</td>
+							</tr>
+							<%for(int i = 0; CourseResult != null && i < CourseResult.getDataList().size(); i++) {%>
+								<%Course x = CourseResult.getDataList().get(i);%>
+								<%if(i%2 == 0){%>
+									<tr class="double">
+								<%}else{%>
+									<tr class="single">
+								<%}%>							
+								<td>
+									<%=x.getId()%>
+								</td>
+								<td>
+									<%=x.getName()%>
+								</td>
+								<td>
+									<%=x.getTeacher().getId()%>
+								</td>
+								<td>
+									<%=x.getTeacher().getName()%>
+								</td>
+								<td>
+									<%=x.getDate()%>
+								</td>
+							</tr>
+							<%}%>
+							<tr class="last_tr">
+								<td colspan="6">
+									<a href="${pageContext.request.contextPath}/user/teacher.jsp" class="add_back">返回</a>
+								</td>	
+							</tr>
+						</tbody>
+					</table>
+	
+					<table class="search_table delete_table" id="delete_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								删除课程
+								</td>
+							</tr>
+							<tr>
+								<th>课程号</th>
+								<th>课程名</th>
+								<th>教师号</th>
+								<th>教师名</th>
+								<th>上课时间</th>
+								<th>删除</th>
+							</tr>
+							<%for(int i = 0; CourseResult != null && i < CourseResult.getDataList().size(); i++) {%>
+								<%Course x = CourseResult.getDataList().get(i);%>
+								<%if(i%2 == 0){%>
+									<tr class="double">
+								<%}else{%>
+									<tr class="single">
+								<%}%>							
+								<td>
+									<%=x.getId()%>
+								</td>
+								<td>
+									<%=x.getName()%>
+								</td>
+								<td>
+									<%=x.getTeacher().getId()%>
+								</td>
+								<td>
+									<%=x.getTeacher().getName()%>
+								</td>
+								<td>
+									<%=x.getDate()%>
+								</td>
+								<td>
+									<a href="javascript:;" class="do_delete">删除</a>
+								</td>
+							</tr>
+							<%}%>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="teacher.html" id="query_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				
+					<table class="search_table manage_table" id="manage_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								学生管理
+								</td>
+							</tr>
+							<tr class="limit">
+								<td>
+									课号：${CourseId}
+								</td>
+								<td>
+									<select name="manage_cname">
+										<%if(CourseName != null) {%>
+											<%for(String x : CourseName){%>
+											<option><%=x%></option>
+											<%}}%>
+									</select>
+								</td>
+								<td>
+									<a href="#">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>邮箱</th>
+								<th>电话</th>
+								<th>院系</th>
+								<th>专业班级</th>
+							</tr>
+							<%for(int i = 0; StudentResult != null && i < StudentResult.getDataList().size(); i++) {%>
+								<%Student x = StudentResult.getDataList().get(i);%>
+								<%if(i%2 == 0){%>
+									<tr class="double">
+								<%}else{%>
+									<tr class="single">
+								<%}%>							
+								<td>
+									<%=x.getId()%>
+								</td>
+								<td>
+									<%=x.getName()%>
+								</td>
+								<td>
+									<%=x.getGender()%>
+								</td>
+								<td>
+									<%=x.getEmail()%>
+								</td>
+								<td>
+									<%=x.getTel()%>
+								</td>
+								<td>
+									<%=x.getDepartment()%>
+								</td>
+								<td>
+									<%=x.getClasses()%>
+								</td>
+							</tr>
+							<%}%>
+							<tr id="query_last">
+								<td colspan="6">
+									<a href="${pageContext.request.contextPath}/user/teacher.jsp" id="judge_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="search_table grade_table" id="grade_table">
+						<thead></thead>
+						<tbody>
+							<tr class="first_tr">
+								<td colspan="6">
+								成绩登记
+								</td>
+							</tr>
+							<tr class="limit">
+								<td >
+									课号：${CourseId}
+								</td>
+								<td>
+									<select name="record_cname">
+										<%if(CourseName != null) {%>
+											<%for(String x : CourseName){%>
+											<option><%=x%></option>
+											<%}}%>
+									</select>
+								</td>
+								<td>
+									<a href="#">登记</a>
+								</td>
+							</tr>
+							<tr>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>院系</th>
+								<th>专业</th>
+								<th>班级</th>
+								<th>分数</th>
+							</tr>
+							<tr>
+								<%for(int i = 0; StudentResult != null && i < StudentResult.getDataList().size(); i++) {%>
+								<%Student x = StudentResult.getDataList().get(i);%>
+								<%if(i%2 == 0){%>
+									<tr class="double">
+								<%}else{%>
+									<tr class="single">
+								<%}%>							
+								<td>
+									<%=x.getId()%>
+								</td>
+								<td>
+									<%=x.getName()%>
+								</td>
+								<td>
+									<%=x.getGender()%>
+								</td>
+								<td>
+									<%=x.getEmail()%>
+								</td>
+								<td>
+									<%=x.getTel()%>
+								</td>
+								<td>
+									<%=x.getDepartment()%>
+								</td>
+								<td>
+									<%=x.getClasses()%>
+								</td>
+								<td>
+									<div class="grade_input_div">
+										<input type="text" name="" placeholder="填写成绩">
+									</div>
+								</td>
+							</tr>
+							<%}%>
+								
+							</tr>
+							<tr id="query_last">
+								<td colspan="6">
+									<input type="button" name="" value="提交">
+									<a href="teacher.html" id="judge_back_home">返回</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+						
+					<div id="footer_box">
+						<div id="footer">
+							<div class="split_bottom"></div>
+							<p id="copy">
+							</p>
+						</div>
+					</div>
+
+					<div id="delete_div">
+						<span>您确定要删除么？</span>
+						<input type="hidden" name="delete_item" id="delete_item" value="">
+						<input type="button" name="" id="delete_confirm" value="确定">
+						<input type="button" id="delete_concel" value="取消">
+					</div>
+						
+				</div>
+			</div>
+			<input type="hidden" name="first" id="first" value="0" />
+		</form>
+	</div>
+</body>
+</html>

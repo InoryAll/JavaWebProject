@@ -1,0 +1,313 @@
+/*教师页面CSS样式表*/
+
+
+#index_div{
+	display: block;
+}
+#main,#main_box,#header_box,.top_menu{
+	min-width:1610px;
+}
+#main_right{
+	float:none;
+	overflow:hidden;
+}
+#main_box{
+	height: auto !important;
+}
+#main{
+	height: auto !important;
+}
+#main_right{
+	height: auto !important;
+}
+/*查看个人信息*/
+#search_table{
+	display: none;
+}
+#search_table tr{
+	height: 31px;
+	line-height: 30px;
+}
+#search_table td{
+	height: 30px;
+}
+.input_span{
+	width: 120px;
+	padding-right:10px;
+	margin-top: 0px;
+	text-align: right;
+}
+.input_div{
+	margin-top: 0px;
+}
+.radio_span{
+	margin-top: 0px;
+}
+#search_table .last_tr{
+	height:40px;
+	line-height: 40px;
+}
+#search_table .first_tr{
+	height: 40px;
+	line-height: 40px;
+}
+.input_div input {
+    display: block;
+    width: 200px;
+    height: 26px;
+    float: left;
+    font-size: 18px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: default;
+}
+.first_tr td{
+	height: 40px !important;
+}
+/*添加课程*/
+#add_table{
+	display:none;
+}
+#add_table tr{
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+#add_table th{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+#add_table td{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+.add_input_div{
+	width: 120px;
+	height: 34px;
+	margin:3px auto;
+	margin-left: 30px;
+}
+.add_input_div input{
+	display: block;
+	width: 114px;
+	height: 30px;
+	font-size: 18px;
+	border:none;
+	background: none;
+	outline: none;
+	cursor: text;
+	text-align: center;
+}
+.add_select{
+	width: 70px;
+	height: 30px;
+	font-size: 16px;
+
+}
+.add_btn{
+	border:none;
+	display: block;
+	width: 68px;
+	height: 34px;
+	background: #87b87f;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	margin:3px auto;
+}
+.add_btn:hover{
+	background: #e3c94c;
+}
+.active{
+	border:2px solid #e3c94c !important;
+}
+.add_back{
+	display: block;
+	width: 80px;
+	height:30px;
+	text-align: center;
+	background: #87b87f;
+	border:none;
+	float: right;
+	margin-right: 30px;
+	font-size: 16px;
+	color: #fff;
+	line-height: 30px;
+}
+#add_table .last_tr{
+	width: 1080px;
+	display: table-row;
+}
+.add_back:hover{
+	background: #d68273;
+}
+/*删除课程*/
+.delete_table{
+	display: none;
+}
+.delete_table th{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+.delete_table tr{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.delete_table td{
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+}
+/*学生管理*/
+.manage_table{
+	display: none;
+	width:1400px;
+}
+.manage_table th{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}
+.manage_table tr{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.manage_table td{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size:12px;
+}
+#query_manage{
+	margin-left:325px;
+}
+#query_select{
+	width:240px;
+	text-align:center;
+}
+#judge_back_home{
+	margin-left:1258px;
+}
+/*成绩登记*/
+.grade_table{
+	display: none;
+	width:1400px;
+}
+.grade_table th{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}
+.grade_table tr{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.grade_table td{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}
+.limit td{
+	width: 466px;
+	height: 40px;
+	line-height: 40px;
+}
+.limit td:nth-child(1){
+	font-size: 18px;
+	color: #5293c4;
+	font-weight:bold;
+}
+.limit select{
+	width: 240px;
+	height: 30px;
+	font-size: 18px;
+	text-align: center;
+}
+.limit a{
+	display: block;
+	width: 80px;
+	height:30px;
+	background: #87b87f;
+	line-height: 30px;
+	color: #fff;
+	font-size: 16px;
+	margin:0 auto;
+	margin-left:325px;
+}
+.limit a:hover{
+	background: #e3c94c;
+}
+.grade_table .grade_input_div input{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	background: none;
+	border:2px solid #2b3d53;
+	margin-top: 3px;
+	text-align: center;
+	font-size: 16px;
+}
+.grade_table #query_last input{
+	float: left;
+	display: block;
+	background: #6fb3e0;
+	border: none;
+	margin-left:860px;
+	width: 80px;
+	height: 30px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.grade_table #query_last a{
+	margin-left: 20px;
+}
+#query_last input:hover{
+	background: #e16e59;
+}
+#re_login{
+	margin-left:60px;
+}
+#query_last td{
+	width:1400px;
+}
+#submit_checkout{
+	margin-left:1158px !important;
+}
+/*开设课程*/
+.open_table{
+	display: none;
+}
+.open_table th{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}
+.open_table tr{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+.open_table td{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regedit</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/regedit.css">
+	<script type="text/javascript" src="js/regedit.js"></script>
+</head>
+<body>
+	<div id="header_box">
+		<div id="header">
+			<h1 class="logo">
+				大连大学素教选课系统
+			</h1>
+		</div>
+	</div>
+	<div id="main_box">
+		<div id="main">
+			<form method="post" action="index.html" id="regedit_form">
+				<input type="hidden" name="isSucceed" id="isSucceed" value=1>
+				<div id="table_box">
+					<div class="title">
+					<p>注&nbsp;册</p>
+					</div>
+					<ul id="nav">
+						<li>
+							<div class="step_circle active">1</div>
+							<div class="linear linear_right active"></div>
+							<div class="info font_active">填写用户名以及密码</div>
+						</li>
+						<li>
+							<div class="linear linear_left"></div>
+							<div class="step_circle">2</div>
+							<div class="linear linear_right"></div>
+							<div class="info">填写基本信息</div>
+						</li>
+						<li>
+							<div class="linear linear_left"></div>
+							<div class="step_circle">3</div>
+							<div class="info">完成注册</div>
+						</li>
+					</ul>
+					<div class="split">
+					</div>
+					<table id="regedit_table1">
+						<thead>	
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+									<p class="tip">
+										请注意:带*的项目为必填项目
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										学号:
+									</span>
+									<div id="input_div">
+										<input type="text" name="id" placeholder="输入你的学号">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										姓名:
+									</span>
+									<div id="input_div">
+										<input type="text" name="name" placeholder="输入你的姓名">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										密码:
+									</span>
+									<div id="input_div">
+										<input type="text" name="password" placeholder="输入你的密码">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										重新输入:
+									</span>
+									<div id="input_div">
+										<input type="text" name="re_password" placeholder="再次输入你的密码">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<span class="input_span">
+											性别:
+										</span>
+										<span class="radio_span">
+											<input type="radio" name="gender" checked value="male">&nbsp;&nbsp;男
+										</span>
+										<span class="radio_span female">
+											<input type="radio" name="gender" value="female">&nbsp;&nbsp;女
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="javascript:;" class="pre">上一页</a>
+									<a href="javascript:;" class="next">下一页</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="regedit_table2">
+						<thead>	
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+									<span class="input_span">
+										邮箱:
+									</span>
+									<div id="input_div">
+										<input type="text" name="email" placeholder="输入你的邮箱">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										电话:
+									</span>
+									<div id="input_div">
+										<input type="text" name="tel" placeholder="输入你的电话">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										院系:
+									</span>
+									<select name="department" class="select_list">
+										<option value=''selected>请选择院系</option>
+										<option value="0">信息工程</option>
+										<option value="1">建筑工程</option>
+									</select>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										专业:
+									</span>
+									<select name="classes1" class="select_list">
+										<option value='' selected>请选择专业</option>
+										<option value="0">计算机科学</option>
+										<option value="1">软件工程</option>
+									</select>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<span class="input_span">
+											班级:
+										</span>
+										<select name="classes2" class="select_list">
+											<option value='' selected>请选择班级</option>
+											<option value="0">141</option>
+											<option value="1">142</option>
+										</select>
+										<span class="input_tip">
+										*
+									</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span id="message">
+										Message
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="javascript:;" class="pre">上一页</a>
+									<input type="submit" value="注册" id="submit_btn">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="regedit_table3">
+						<thead>	
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+									<span id="success_message">
+										注册成功
+									</span>
+									<span id="failed_message">
+										注册失败
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="regedit.html" id="back_to_regedit">返回注册</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="login.html" id="back_to_login">返回登录</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="footer_box">
+		<div id="footer">
+			<div class="split_bottom">
+			</div>
+			<p id="copy">
+			</p>
+		</div>
+	</div>
+</body>
+</html>
