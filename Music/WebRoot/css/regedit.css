@@ -1,0 +1,300 @@
+/*
+*Author:Inory;
+*Date:2017-4-6;
+*last modefied by:Inory;
+*last modefied time:2017-4-6;
+*/
+
+/*自定义bootstrap样式*/
+
+/*jquery-ui自定义样式*/
+.ui-checkboxradio-radio-label .ui-icon-background {
+    width: 10px;
+    height: 10px;
+    border-radius: 1em;
+    overflow: visible;
+    border: none;
+}
+
+/*公用样式*/
+body{
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	background-repeat: repeat;
+}
+li{
+	list-style: none;
+}
+ul{
+	padding: 0;
+}
+
+/*横幅容纳区域*/
+#all{
+	width: 100%;
+	overflow-x: hidden;
+}
+#all #box section{
+	float: left;
+}
+#all #box{
+	width: 400%;
+	margin-left: 0%;
+}
+
+/*欢迎区域样式*/
+#welcome{
+	width:25%;
+	height: 600px;
+	margin-top: 200px;
+}
+#welcome .welcome-page{
+	width: 90%;
+	margin: 0 auto;
+	background: #60c7cb;
+	text-align: center;
+	margin-top: 100px;
+	padding-bottom: 30px;
+	box-shadow: 10px 10px 50px #000;
+}
+#welcome .welcome-page .first-title{
+	margin: 0;
+	color: #fff;
+	line-height: 100px;
+}
+#welcome .welcome-page .split{
+	margin: 0 auto;
+	width: 80%;
+	height: 6px;
+	background:#fff;
+}
+#welcome .welcome-page .second-title{
+	margin: 0;
+	font-size: 20px;
+	margin-top: 30px;
+	color: #fff;
+}
+#welcome .welcome-page .start{
+	margin-top: 40px;
+	color: #337ab7;
+}
+/*填写个人信息*/
+#basicInfo{
+	width: 25%;
+	height: 800px;
+	margin-top: 50px;
+}
+#basicInfo .basicInfo-page{
+	width: 90%;
+	margin: 0 auto;
+	background: #2980b9;
+	text-align: center;
+	padding-bottom: 30px;
+	box-shadow: 10px 10px 50px #000;
+	margin-top: 100px;
+}
+#basicInfo .basicInfo-page .first-title{
+	margin: 0;
+	color: #fff;
+	line-height: 100px;
+}
+#basicInfo .basicInfo-page .split{
+	margin: 0 auto;
+	width: 80%;
+	height: 6px;
+	background: #fff;
+}
+#basicInfo .basicInfo-page .input-group{
+	width: 50%;
+	margin-top: 20px;
+	margin-left: 25%;
+}
+#basicInfo .basicInfo-page fieldset{
+	margin-top: 20px;
+	text-align: left;
+	padding-left: 25%;
+}
+#basicInfo .basicInfo-page textarea{
+	margin-top: 20px;
+	width: 50%;
+	margin-left: 25%;
+	resize: none;
+}
+#basicInfo .basicInfo-page .next{
+	margin-top: 20px;
+	color: #337ab7;
+}
+/*填写喜欢的音乐*/
+#habit{
+	width: 25%;
+	height: 600px;
+	margin-top: 100px;
+}
+#habit .habit-page{
+	width: 90%;
+	margin: 0 auto;
+	background: #50c9ba;
+	text-align: center;
+	padding-bottom: 30px;
+	box-shadow: 10px 10px 50px #000;
+	margin-top: 100px;
+}
+#habit .habit-page .first-title{
+	margin: 0;
+	color: #fff;
+	line-height: 100px;
+}
+#habit .habit-page .split{
+	margin: 0 auto;
+	width: 80%;
+	height: 6px;
+	background: #fff;
+}
+#habit .habit-page .alert{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+}
+#habit .habit-page .list{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+}
+#habit .habit-page .list .item{
+	float: left;
+	width: 10%;
+	height: 40px;
+	background: #eeeeee;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 16px;
+	color: #00937F;
+	box-sizing: border-box;
+	cursor: default;
+}
+#habit .habit-page .list .item{
+	margin-left: 1%;
+	margin-top: 1%;
+}
+#habit .habit-page .next{
+	margin-top: 20px;
+	color: #337ab7;
+}
+.active{
+	background: #4994fd !important;
+	color: #fff !important;
+	border:1px solid #fff !important;
+}
+/*感谢用户支持*/
+#thanks{
+	width: 25%;
+	height: 600px;
+	margin-top: 200px;
+}
+#thanks .thanks-page{
+	width: 90%;
+	margin: 0 auto;
+	background: #574e6d;
+	text-align: center;
+	padding-bottom: 30px;
+	box-shadow: 10px 10px 50px #000;
+	margin-top: 100px;
+}
+#thanks .thanks-page .first-title{
+	margin: 0;
+	color: #fff;
+	line-height: 100px;
+}
+#thanks .thanks-page .split{
+	margin: 0 auto;
+	width: 80%;
+	height: 6px;
+	background: #fff;
+}
+#thanks .thanks-page .second-title{
+	margin: 0;
+	font-size: 20px;
+	margin-top: 30px;
+	color: #fff;
+}
+#thanks .thanks-page .end{
+	margin-top: 40px;
+	color: #337ab7;
+}
+
+@media only screen and (max-width: 700px){
+	.first-title{
+		font-size: 30px !important;
+	}
+	.split{
+		width: 90% !important;
+		margin-left: 5% !important;
+	}
+	#basicInfo .basicInfo-page textarea{
+		margin-top: 20px;
+		width: 50%;
+		margin-left: 25%;
+		resize: none;
+		height: 100px;
+	}
+	#habit .habit-page .list .item{
+		float: left;
+		width: 15%;
+		height: 30px;
+		background: #eeeeee;
+		line-height: 30px;
+		text-align: center;
+		border-radius: 10px;
+		font-size: 10px;
+		color: #00937F;
+		box-sizing: border-box;
+		cursor: default;
+	}
+}
+@media only screen and (max-width: 500px){
+	.first-title{
+		font-size: 20px !important;
+		line-height: 60px !important;
+	}
+	.second-title{
+		font-size: 16px !important;
+		margin-top: 20px !important;
+	}
+	.btn{
+		margin-top: 20px !important;
+	}
+	.split{
+		width: 90% !important;
+		margin-left: 5% !important;
+	}
+	#basicInfo .basicInfo-page .input-group{
+		width: 70%;
+		margin-top: 20px;
+		margin-left: 15%;
+	}
+	#basicInfo .basicInfo-page fieldset{
+		margin-top: 20px;
+		text-align: left;
+		padding-left: 15%;
+	}
+	#basicInfo .basicInfo-page textarea{
+		margin-top: 20px;
+		width: 70%;
+		margin-left: 15%;
+		resize: none;
+	}
+	#habit .habit-page .list .item{
+		float: left;
+		width: 18%;
+		height: 30px;
+		background: #eeeeee;
+		line-height: 30px;
+		text-align: center;
+		border-radius: 10px;
+		font-size: 10px;
+		color: #00937F;
+		box-sizing: border-box;
+		cursor: default;
+	}
+}

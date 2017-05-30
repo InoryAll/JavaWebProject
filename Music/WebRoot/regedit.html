@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Json Music</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="lib/normalize/normalize.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/regedit.css">
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="lib/html5shiv/html5shiv.min.js"></script>
+		<script type="text/javascript" src="lib/respond/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<section id="all" class="clearfix">
+		<section id="box" class="clearfix">
+			<section id="welcome">
+				<div class="container">
+					<div class="welcome-page">
+						<h1 class="first-title">
+							欢迎你加入我们的大家庭！
+						</h1>
+						<hr class="split">
+						<p class="second-title">
+							现在，希望您能够填写以下数据—————
+						</p>
+						<button class="start btn btn-default btn-lg text-success">
+							让我们开始吧 ♪
+						</button>
+					</div>
+				</div>
+			</section>
+			<section id="basicInfo">
+				<div class="container">
+					<div class="basicInfo-page">
+						<h1 class="first-title">
+							请您填写一些信息
+						</h1>
+						<hr class="split">
+						<form action="#">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-user"></span>
+								</span>
+								<input type="text" class="form-control" placeholder="请输入您的昵称">
+							</div>
+							<fieldset>
+								<input type="radio" name="gender" id="male" value="男"><label for="male">男</label>
+								<input type="radio" name="gender" id="female" value="女"><label for="female">女</label>
+							</fieldset>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+								<input type="text" id="datepicker" class="form-control" placeholder="请选择出生日期，或输入1996-6-1">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-home"></span>
+								</span>
+								<input type="text" class="form-control" placeholder="请输入地区">	
+							</div>
+						</form>
+						<form action="#">
+							<textarea class="form-control" cols="30" rows="10" placeholder="请输入个人介绍"></textarea>
+						</form>
+						<button class="btn btn-default btn-lg next">
+							继续我们的旅途 ♪
+						</button>
+					</div>
+				</div>
+			</section>
+			<section id="habit">
+				<div class="container">
+					<div class="habit-page">
+						<h1 class="first-title">
+							请选择您的偏好
+						</h1>
+						<hr class="split">
+						<div class="alert alert-warning alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<strong>提醒:</strong> 你可以从以下标签中选择你最喜欢的音乐类型
+						</div>
+						<ul class="list clearfix">
+							<li class="item">欢快</li>
+							<li class="item">忧伤</li>
+							<li class="item">轻快</li>
+							<li class="item">抒情</li>
+							<li class="item">慢摇</li>
+							<li class="item">爵士</li>
+							<li class="item">摇滚</li>
+							<li class="item">轻音乐</li>
+							<li class="item">深沉</li>
+							<li class="item">清新</li>
+							<li class="item">欢快</li>
+							<li class="item">忧伤</li>
+							<li class="item">轻快</li>
+							<li class="item">抒情</li>
+							<li class="item">慢摇</li>
+							<li class="item">爵士</li>
+							<li class="item">摇滚</li>
+							<li class="item">轻音乐</li>
+							<li class="item">深沉</li>
+							<li class="item">清新</li>
+						</ul>
+						<button class="btn btn-default btn-lg next">
+							下一站 ♪
+						</button>
+					</div>
+				</div>
+			</section>
+			<section id="thanks">
+				<div class="container">
+					<div class="thanks-page">
+						<h1 class="first-title">
+							感谢您的支持！
+						</h1>
+						<hr class="split">
+						<p class="second-title">
+							下面正式开始音乐之旅吧~
+						</p>
+						<button class="btn btn-default btn-lg end">
+							听音乐去 ♪
+						</button>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/regedit.js"></script>
+</body>
+</html>

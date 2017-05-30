@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Json Music</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="lib/normalize/normalize.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/owl-carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/owl-carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="lib/html5shiv/html5shiv.min.js"></script>
+		<script type="text/javascript" src="lib/respond/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!--头部区域-->
+	<header id="header">
+		<!--顶部栏-->
+		<div class="top clearfix">
+			<h1 class="brand clearfix">
+				<img src="img/logo.png" alt="LOGO" class="logo">
+				<span class="title">
+					Json Music
+				</span>
+			</h1>
+			<ul class="list clearfix">
+				<li><a href="#">客户中心</a></li>
+				<li><a href="#">招贤纳士</a></li>
+				<li><a href="#">会员中心</a></li>
+			</ul>
+			<a href="#" class="login">
+				登录
+			</a>
+			<a href="#" class="regedit">
+				注册
+			</a>
+		</div>
+		<!--/顶部栏-->
+		<!--导航栏目-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">首页</a></li>
+						<li><a href="#">榜单</a></li>
+						<li><a href="#">乐库</a></li>
+						<li><a href="#">电台</a></li>
+						<li><a href="#">关于</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--/导航栏目-->		
+	</header>
+	<!--/头部区域-->
+	<!--轮播效果-->
+	<section id="ad">
+ 		<section class="carousel"> 
+			<div class="owl-carousel owl-theme">
+				<div class="item">
+					<img src="img/item1.png" alt="" class="img-responsive">
+				</div>
+				<div class="item">
+					<img src="img/item2.png" alt="" class="img-responsive">
+				</div>
+				<div class="item">
+					<img src="img/item3.png" alt="" class="img-responsive">
+				</div>
+			</div>
+		</section>
+		<a href="javascript:;" class="pre"><</a>
+		<a href="javascript:;" class="next">></a>
+	</section>
+	<!--/轮播效果-->
+	<!--推荐区域-->
+	<section id="recommend">
+		<section class="recommend-box clearfix">
+			<section class="today">
+				<h1 class="title">今日推荐</h1>
+				<ul class="list">
+					<li><strong>1</strong><a href="#">动物世界</a></li>
+					<li><strong>2</strong><a href="#">高尚</a></li>
+					<li><strong>3</strong><a href="#">The One</a></li>
+					<li><strong>4</strong><a href="#">Fool</a></li>
+					<li><strong>5</strong><a href="#">拿不走的记忆</a></li>
+					<li><strong>6</strong><a href="#">也罢</a></li>
+					<li><strong>7</strong><a href="#">给自己的信</a></li>
+					<li><strong>8</strong><a href="#">大雁</a></li>
+					<li><strong>9</strong><a href="#">玩笑</a></li>
+					<li><strong>10</strong><a href="#">你拥抱我</a></li>
+					<li><a href="#">查看全部 ></a></li>
+				</ul>
+			</section>
+			<section class="love">
+				<h1 class="title">发现音乐</h1>
+				<div class="box">
+					<div class="search-box">
+						<div class="searchDiv">
+							<input type="text" class="search" name="" placeholder="请输入歌曲/歌手/专辑名称">
+						</div>
+						<a href="javascript:;" class="search-btn">搜索</a>
+					</div>
+					<div class="item">
+						<div class="tag">清新值：</div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+								<span class="sr-only">40% Complete (success)</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="tag">伤感值：</div> 
+						<div class="progress">
+							<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+								<span class="sr-only">20% Complete</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="tag">阳光值：</div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+								<span class="sr-only">60% Complete (warning)</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="tag">热烈值：</div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+								<span class="sr-only">80% Complete (danger)</span>
+							</div>
+						</div>
+					</div>
+					<div class="getMore">
+						<a href="javascript:;" class="getMoreBtn btn btn-default btn-lg">更多</a>
+					</div>
+					<div class="searchMusic">
+						<div class="arrow"></div>
+						<div class="searchDetail">
+							<ul class="abstractKind">
+								<li class="clearfix">
+									<img src="img/li1.png" alt="">
+									<strong>语种</strong>
+									<ul class="detailKind">
+										<li><a href="#">华语</a></li>
+										<li><a href="#">欧美</a></li>
+										<li><a href="#">日语</a></li>
+										<li><a href="#">韩语</a></li>
+										<li><a href="#">粤语</a></li>
+										<li><a href="#">小语种</a></li>
+									</ul>
+								</li>
+								<li class="clearfix">
+									<img src="img/li2.png" alt="">
+									<strong>风格</strong>
+									<ul class="detailKind">
+										<li><a href="#">流行</a></li>
+										<li><a href="#">摇滚</a></li>
+										<li><a href="#">民谣</a></li>
+										<li><a href="#">电子</a></li>
+										<li><a href="#">舞曲</a></li>
+										<li><a href="#">说唱</a></li>
+										<li><a href="#">轻音乐</a></li>
+										<li><a href="#">爵士</a></li>
+										<li><a href="#">乡村</a></li>
+										<li><a href="#">R&amp;B/Soul</a></li>
+										<li><a href="#">古典</a></li>
+										<li><a href="#">民族</a></li>
+										<li><a href="#">英伦</a></li>
+										<li><a href="#">金属</a></li>
+										<li><a href="#">朋克</a></li>
+										<li><a href="#">蓝调</a></li>
+										<li><a href="#">雷鬼</a></li>
+										<li><a href="#">世界音乐</a></li>
+										<li><a href="#">拉丁</a></li>
+										<li><a href="#">另类/独立</a></li>
+										<li><a href="#">New Age</a></li>
+										<li><a href="#">古风</a></li>
+										<li><a href="#">后摇</a></li>
+										<li><a href="#">Bossa Nova</a></li>
+									</ul>
+								</li>
+								<li class="clearfix">
+									<img src="img/li3.png" alt="">
+									<strong>场景</strong>
+									<ul class="detailKind">
+										<li><a href="#">清晨</a></li>
+										<li><a href="#">夜晚</a></li>
+										<li><a href="#">学习</a></li>
+										<li><a href="#">工作</a></li>
+										<li><a href="#">午休</a></li>
+										<li><a href="#">下午茶</a></li>
+										<li><a href="#">地铁</a></li>
+										<li><a href="#">驾车</a></li>
+										<li><a href="#">运动</a></li>
+										<li><a href="#">旅行</a></li>
+										<li><a href="#">散步</a></li>
+										<li><a href="#">酒吧</a></li>
+									</ul>
+								</li>
+								<li class="clearfix">
+									<img src="img/li4.png" alt="">
+									<strong>情感</strong>
+									<ul class="detailKind">
+										<li><a href="#">怀旧</a></li>
+										<li><a href="#">清新</a></li>
+										<li><a href="#">浪漫</a></li>
+										<li><a href="#">性感</a></li>
+										<li><a href="#">伤感</a></li>
+										<li><a href="#">治愈</a></li>
+										<li><a href="#">放松</a></li>
+										<li><a href="#">孤独</a></li>
+										<li><a href="#">感动</a></li>
+										<li><a href="#">兴奋</a></li>
+										<li><a href="#">快乐</a></li>
+										<li><a href="#">安静</a></li>
+										<li><a href="#">思念</a></li>
+									</ul>
+								</li>
+								<li class="clearfix">
+									<img src="img/li5.png" alt="">
+									<strong>主题</strong>
+									<ul class="detailKind">
+										<li><a href="#">影视原声</a></li>
+										<li><a href="#">ACG</a></li>
+										<li><a href="#">校园</a></li>
+										<li><a href="#">游戏</a></li>
+										<li><a href="#">70后</a></li>
+										<li><a href="#">80后</a></li>
+										<li><a href="#">90后</a></li>
+										<li><a href="#">网络歌曲</a></li>
+										<li><a href="#">KTV</a></li>
+										<li><a href="#">经典</a></li>
+										<li><a href="#">翻唱</a></li>
+										<li><a href="#">吉他</a></li>
+										<li><a href="#">钢琴</a></li>
+										<li><a href="#">器乐</a></li>
+										<li><a href="#">儿童</a></li>
+										<li><a href="#">榜单</a></li>
+										<li><a href="#">00后</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+	<!--/推荐区域-->
+	<!--歌单推荐区域-->
+	<section id="musicList">
+		<section class="musicBox">
+			<section class="box clearfix">
+				<h1 class="title">
+					最热排行榜
+				</h1>
+				<section class="listBox">
+					<div class="item">
+						<h2 class="title clearfix">
+							<img src="img/cg1.jpg" alt="" class="cg">
+							<span class="info">最新排行榜</span>
+						</h2>
+						<ul class="list">
+							<li>
+								<strong>1</strong>
+								<a href="#">高尚</a>
+							</li>
+							<li>
+								<strong>2</strong>
+								<a href="#">很高兴认识你</a>
+							</li>
+							<li>
+								<strong>3</strong>
+								<a href="#">我们去过很多地方</a>
+							</li>
+							<li>
+								<strong>4</strong>
+								<a href="#">慢慢习惯</a>
+							</li>
+							<li>
+								<strong>5</strong>
+								<a href="#">Scared To Be Lonely</a>
+							</li>
+							<li>
+								<strong>6</strong>
+								<a href="#">Let Me Love You</a>
+							</li>
+							<li>
+								<strong>7</strong>
+								<a href="#">Sign Of Times</a>
+							</li>
+							<li>
+								<strong>8</strong>
+								<a href="#">Waterfall</a>
+							</li>
+							<li>
+								<strong>9</strong>
+								<a href="#">丑八怪</a>
+							</li>
+							<li>
+								<strong>10</strong>
+								<a href="#">绅士</a>
+							</li>
+							<li>
+								<a href="#">查看全部 ></a>
+							</li>
+						</ul>
+					</div>
+					<div class="item">
+						<h2 class="title clearfix">
+							<img src="img/cg2.jpg" alt="" class="cg">
+							<span class="info">最热排行榜</span>
+						</h2>
+						<ul class="list">
+							<li>
+								<strong>1</strong>
+								<a href="#">高尚</a>
+							</li>
+							<li>
+								<strong>2</strong>
+								<a href="#">很高兴认识你</a>
+							</li>
+							<li>
+								<strong>3</strong>
+								<a href="#">我们去过很多地方</a>
+							</li>
+							<li>
+								<strong>4</strong>
+								<a href="#">慢慢习惯</a>
+							</li>
+							<li>
+								<strong>5</strong>
+								<a href="#">Scared To Be Lonely</a>
+							</li>
+							<li>
+								<strong>6</strong>
+								<a href="#">Let Me Love You</a>
+							</li>
+							<li>
+								<strong>7</strong>
+								<a href="#">Sign Of Times</a>
+							</li>
+							<li>
+								<strong>8</strong>
+								<a href="#">Waterfall</a>
+							</li>
+							<li>
+								<strong>9</strong>
+								<a href="#">丑八怪</a>
+							</li>
+							<li>
+								<strong>10</strong>
+								<a href="#">绅士</a>
+							</li>
+							<li>
+								<a href="#">查看全部 ></a>
+							</li>
+						</ul>
+					</div>
+					<div class="item">
+						<h2 class="title clearfix">
+							<img src="img/cg3.jpg" alt="" class="cg">
+							<span class="info">原创排行榜</span>
+						</h2>
+						<ul class="list">
+							<li>
+								<strong>1</strong>
+								<a href="#">高尚</a>
+							</li>
+							<li>
+								<strong>2</strong>
+								<a href="#">很高兴认识你</a>
+							</li>
+							<li>
+								<strong>3</strong>
+								<a href="#">我们去过很多地方</a>
+							</li>
+							<li>
+								<strong>4</strong>
+								<a href="#">慢慢习惯</a>
+							</li>
+							<li>
+								<strong>5</strong>
+								<a href="#">Scared To Be Lonely</a>
+							</li>
+							<li>
+								<strong>6</strong>
+								<a href="#">Let Me Love You</a>
+							</li>
+							<li>
+								<strong>7</strong>
+								<a href="#">Sign Of Times</a>
+							</li>
+							<li>
+								<strong>8</strong>
+								<a href="#">Waterfall</a>
+							</li>
+							<li>
+								<strong>9</strong>
+								<a href="#">丑八怪</a>
+							</li>
+							<li>
+								<strong>10</strong>
+								<a href="#">绅士</a>
+							</li>
+							<li>
+								<a href="#">查看全部 ></a>
+							</li>
+						</ul>
+					</div>
+					<div class="item">
+						<h2 class="title clearfix">
+							<img src="img/cg1.jpg" alt="" class="cg">
+							<span class="info">音乐飙升榜</span>
+						</h2>
+						<ul class="list">
+							<li>
+								<strong>1</strong>
+								<a href="#">高尚</a>
+							</li>
+							<li>
+								<strong>2</strong>
+								<a href="#">很高兴认识你</a>
+							</li>
+							<li>
+								<strong>3</strong>
+								<a href="#">我们去过很多地方</a>
+							</li>
+							<li>
+								<strong>4</strong>
+								<a href="#">慢慢习惯</a>
+							</li>
+							<li>
+								<strong>5</strong>
+								<a href="#">Scared To Be Lonely</a>
+							</li>
+							<li>
+								<strong>6</strong>
+								<a href="#">Let Me Love You</a>
+							</li>
+							<li>
+								<strong>7</strong>
+								<a href="#">Sign Of Times</a>
+							</li>
+							<li>
+								<strong>8</strong>
+								<a href="#">Waterfall</a>
+							</li>
+							<li>
+								<strong>9</strong>
+								<a href="#">丑八怪</a>
+							</li>
+							<li>
+								<strong>10</strong>
+								<a href="#">绅士</a>
+							</li>
+							<li>
+								<a href="#">查看全部 ></a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+		</section>
+	</section>
+	<!--/歌单推荐区域-->
+	<!--获取更多区域-->
+	<section id="getMore">
+		<section class="box">
+			<section class="btnBox">
+				<a href="#" class="btn btn-default getMoreBtn btn-lg">
+					<span class="glyphicon glyphicon-menu-down"></span>
+				</a>
+			</section>
+		</section>
+	</section>
+	<!--/获取更多区域-->
+	<!--底部区域-->
+	<footer id="footer">
+		<section class="box">
+			<section class="imgBox">
+				<img src="img/contact.png" alt="" class="contact img-responsive">
+			</section>
+		</section>
+	</footer>
+	<!--/底部区域-->
+	<!--悬浮区域模态框（智能化搜索）-->
+	<div class="modal fade" id="personalSearch" role="dialog" aria-labelledby="personalSearchLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="imgContent">
+						<img src="" alt="" class="musicImg">
+					</div>
+					<div class="findedMusic">
+						<span class="findedCount">
+							找到18首歌曲	
+						</span>
+						<ul class="menu clearfix">
+							<li class="active"><a href="#">单曲</a></li>
+							<li><a href="#">歌手</a></li>
+							<li><a href="#">专辑</a></li>
+							<li><a href="#">MV</a></li>
+							<li><a href="#">歌词</a></li>
+						</ul>
+						<ul class="result">
+							<li class="clearfix">
+								<img src="img/play.png" alt="">
+								<a href="#" class="musicName">五环之歌</a>
+								<span class="musicInfo">-《煎饼侠》插入曲</span>
+								<span class="author">岳云鹏</span>
+								<span class="origin">《煎饼侠》</span>
+								<span class="length">2:30</span>
+							</li>
+							<li class="clearfix">
+								<img src="img/play.png" alt="">
+								<a href="#" class="musicName">五环之歌</a>
+								<span class="musicInfo">-《煎饼侠》插入曲</span>
+								<span class="author">岳云鹏</span>
+								<span class="origin">《煎饼侠》</span>
+								<span class="length">2:30</span>
+							</li>
+							<li class="clearfix">
+								<img src="img/play.png" alt="">
+								<a href="#" class="musicName">五环之歌</a>
+								<span class="musicInfo">-《煎饼侠》插入曲</span>
+								<span class="author">岳云鹏</span>
+								<span class="origin">《煎饼侠》</span>
+								<span class="length">2:30</span>
+							</li>
+							<li class="clearfix">
+								<img src="img/play.png" alt="">
+								<a href="#" class="musicName">五环之歌</a>
+								<span class="musicInfo">-《煎饼侠》插入曲</span>
+								<span class="author">岳云鹏</span>
+								<span class="origin">《煎饼侠》</span>
+								<span class="length">2:30</span>
+							</li>
+						</ul>
+					</div>
+					<div class="similarMusic">
+						<h3 class="title">相似歌曲</h3>
+						<ul class="list">
+							<li class="clearfix">
+								<strong>1</strong>
+								<a href="#">五环之歌</a>
+							</li>
+							<li class="clearfix">
+								<strong>2</strong>
+								<a href="#">相见恨晚</a>
+							</li>
+							<li class="clearfix">
+								<strong>3</strong>
+								<a href="#">拿不走的记忆</a>
+							</li>
+							<li class="clearfix">
+								<strong>4</strong>
+								<a href="#">给自己的信</a>
+							</li>
+							<li class="clearfix">
+								<strong>5</strong>
+								<a href="#">拥抱</a>
+							</li>
+							<li class="clearfix">
+								<strong>6</strong>
+								<a href="#">你拥抱我</a>
+							</li>
+							<li class="clearfix">
+								<strong>7</strong>
+								<a href="#">Let Me Love You</a>
+							</li>
+							<li class="clearfix">
+								<strong>8</strong>
+								<a href="#">我们去过很多地方</a>
+							</li>
+							<li class="clearfix">
+								<strong>9</strong>
+								<a href="#">丑八怪</a>
+							</li>
+							<li class="clearfix">
+								<strong>10</strong>
+								<a href="#">绅士</a>
+							</li>
+							<li class="clearfix">
+								<a href="#">查看更多 ></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/悬浮区域模态框（智能化搜索）-->
+	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/owl-carousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

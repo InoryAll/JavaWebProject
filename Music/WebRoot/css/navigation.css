@@ -1,0 +1,368 @@
+/*
+*Author:Inory;
+*Date:2017-4-5;
+*last modefied by:Inory;
+*last modefied time:2017-4-5;
+*/
+
+/*自定义的bootstrap样式*/
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+.navbar-inverse {
+  background-color: #000;
+  border-color: #000;
+  margin-top: 20px;
+}
+
+/*公用样式*/
+body{
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	background-repeat:repeat;
+}
+li{
+	list-style: none;
+}
+ul{
+	padding: 0;
+}
+
+
+/*头部样式*/
+#header{
+	background: transparent;
+}
+
+
+/*主要区域样式*/
+#main{
+	margin-top: 50px;
+}
+#main .above{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: #fff;
+	box-shadow: 10px 10px 50px #000;
+}
+#main .above .white{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	border: 1px solid #9d685a;
+}
+#main .above .white li{
+	width: 5%;
+	height: 300px;
+	float: left;
+}
+#main .above .white li+li{
+	border-left: 1px solid #8d8d8d;
+}
+#main .above .white li{
+	border-right: 1px solid #b9b9b9;
+}
+#main .above .black{
+	position: absolute;
+	width: 100%;
+	height: 180px;
+}
+#main .above .black li{
+	width: 5%;
+	height: 180px;
+	float: left;
+	background: #000;
+	border-left: 1px solid #777576;
+	border-right: 1px solid #777576;
+	border-bottom: 1px solid #777576;
+}
+#main .above .black li:nth-child(1){
+	margin-left: 2.5%;
+}
+#main .above .black li:nth-child(2){
+	margin-left: 5%;
+}
+#main .above .black li:nth-child(3){
+	margin-left: 10%;
+}
+#main .above .black li:nth-child(4){
+	margin-left: 5%;
+}
+#main .above .black li:nth-child(5){
+	margin-left: 5%;
+}
+#main .above .black li:nth-child(6){
+	margin-left: 15%;
+}
+#main .above .black li:nth-child(7){
+	margin-left: 5%;
+}
+#main .above .black li:nth-child(8){
+	margin-left: 5%;
+}
+#main .below{
+	width: 100%;
+	height: 300px;
+	position: relative;
+	background: #fff;
+	margin-top: 100px;
+	box-shadow: 10px 10px 50px #000;
+	border: 1px solid #9d685a;
+}
+#main .carousel{
+	width: 100%;
+	height: 100%;
+}
+
+#main .carousel .box{
+	width: 96%;
+	height: 242px;
+	text-align: center;
+	margin: 0 auto;
+}
+#main .carousel .box1{
+	background: #60c7cb;
+}
+#main .carousel .box2{
+	background: #574e6d;
+}
+#main .carousel .box3{
+	background: #2980b9; 
+}
+#main .carousel .box h1{
+	padding-top: 70px;
+	color: #fff;
+}
+#main .carousel .box hr{
+	width: 90%;
+	margin-top: 20px;
+	height: 4px;
+	background: #fff;
+}
+#main .carousel .box p{
+	margin-top: 20px;
+	word-break: break-all;
+	word-wrap: break-word;
+	color: #fff;
+	font-size: 16px;
+}
+.white-active{
+	background: #eeeeee;
+}
+.white-focus{
+	background: #aaaaaa;
+}
+.black-active{
+	box-shadow: inset 0px 0px 20px #fff;
+}
+.black-focus{
+	background: #444444 !important;
+}
+
+/*底部区域*/
+#footer{
+	margin-top: 0px;
+}
+#footer .bottom-above{
+	position: relative;
+	width: 100%;
+	height: 150px;
+	background: #fff;
+	margin-top: 100px;
+	box-shadow: 1px 1px 20px #000;
+}
+#footer .bottom-below{
+	width: 100%;
+	height: 150px;
+	background: #000;
+	margin-bottom: 50px;
+	box-shadow: 1px 1px 20px #000;
+}
+#footer .enter{
+	position: absolute;
+	width: 250px; 
+	height: 60px;
+	border:none;
+	background: #395ea6;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	left: calc(50% - 125px);
+	top: 45px;
+	color: #fff;
+	font-size: 24px;
+}
+#footer .contact{
+	width: 10%;
+	margin:0 auto;
+	padding-top: calc(75px - 5%);
+}
+
+@media only screen and (max-width: 800px){
+	#main .above{
+		position: relative;
+		width: 100%;
+		height: 150px;
+		background: #fff;
+		box-shadow: 10px 10px 50px #000;
+	}
+	#main .above .white{
+		position: absolute;
+		width: 100%;
+		height: 150px;
+		border: 1px solid #9d685a;
+	}
+	#main .above .white li{
+		width: 5%;
+		height: 150px;
+		float: left;
+	}
+	#main .above .black{
+		position: absolute;
+		width: 100%;
+		height: 90px;
+	}
+	#main .above .black li{
+		width: 5%;
+		height: 90px;
+		float: left;
+		background: #000;
+		border-left: 1px solid #777576;
+		border-right: 1px solid #777576;
+		border-bottom: 1px solid #777576;
+	}
+}
+@media only screen and (max-width: 600px){
+	#main .above{
+		position: relative;
+		width: 100%;
+		height: 120px;
+		background: #fff;
+		box-shadow: 10px 10px 50px #000;
+	}
+	#main .above .white{
+		position: absolute;
+		width: 100%;
+		height: 120px;
+		border: 1px solid #9d685a;
+	}
+	#main .above .white li{
+		width: 5%;
+		height: 120px;
+		float: left;
+	}
+	#main .above .black{
+		position: absolute;
+		width: 100%;
+		height: 70px;
+	}
+	#main .above .black li{
+		width: 5%;
+		height: 70px;
+		float: left;
+		background: #000;
+		border-left: 1px solid #777576;
+		border-right: 1px solid #777576;
+		border-bottom: 1px solid #777576;
+	}
+}
+@media only screen and (max-width: 400px){
+	#main .above{
+		position: relative;
+		width: 100%;
+		height: 90px;
+		background: #fff;
+		box-shadow: 10px 10px 50px #000;
+	}
+	#main .above .white{
+		position: absolute;
+		width: 100%;
+		height: 90px;
+		border: 1px solid #9d685a;
+	}
+	#main .above .white li{
+		width: 5%;
+		height: 90px;
+		float: left;
+	}
+	#main .above .black{
+		position: absolute;
+		width: 100%;
+		height: 50px;
+	}
+	#main .above .black li{
+		width: 5%;
+		height: 50px;
+		float: left;
+		background: #000;
+		border-left: 1px solid #777576;
+		border-right: 1px solid #777576;
+		border-bottom: 1px solid #777576;
+	}
+	#main .below{
+		width: 100%;
+		height: 200px;
+		position: relative;
+		background: #fff;
+		margin-top: 50px;
+		box-shadow: 10px 10px 50px #000;
+		border: 1px solid #9d685a;
+	}
+	#main .carousel .box{
+		width: 96%;
+		height: 142px;
+		text-align: center;
+		margin: 0 auto;
+	}
+	#main .carousel .box h1{
+		padding-top: 30px;
+		color: #fff;
+		font-size: 20px;
+	}
+	#main .carousel .box hr{
+		width: 90%;
+		margin-top: 20px;
+		height: 2px;
+		background: #fff;
+	}
+	#main .carousel .box p{
+		margin-top: 10px;
+		word-break: break-all;
+		word-wrap: break-word;
+		color: #fff;
+		font-size: 12px;
+	}
+	#footer .bottom-above{
+		position: relative;
+		width: 100%;
+		height: 100px;
+		background: #fff;
+		margin-top: 50px;
+		box-shadow: 1px 1px 20px #000;
+	}
+	#footer .bottom-below{
+		width: 100%;
+		height: 100px;
+		background: #000;
+		margin-bottom: 50px;
+		box-shadow: 1px 1px 20px #000;
+	}
+	#footer .enter{
+		position: absolute;
+		width: 150px; 
+		height: 40px;
+		border:none;
+		background: #395ea6;
+		background-repeat: no-repeat;
+		border-radius: 6px;
+		left: calc(50% - 75px);
+		top: 30px;
+		color: #fff;
+		font-size: 18px;
+	}
+	#footer .contact{
+		width: 10%;
+		margin:0 auto;
+		padding-top: calc(50px - 5%);
+	}
+}

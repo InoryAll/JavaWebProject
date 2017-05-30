@@ -1,0 +1,938 @@
+/*
+*Author:Inory;
+*Date:2017-4-7;
+*last modefied by:Inory;
+*last modefied time:2017-4-7;
+*/
+
+/*自定义bootstrap样式*/
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-header {
+    float: left;
+  }
+}
+
+.navbar-nav {
+  margin: 7.5px -15px;
+  width: 100%;
+  height: 60px;
+}
+.navbar-nav > li{
+	width: 10%;
+	height: 100%;
+}
+.navbar-nav > li:first-child{
+	margin-left: 25%;
+}
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 28px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .navbar-nav .open .dropdown-menu > li > a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.navbar-default {
+  background-color: #2c323b;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  box-shadow: 10px 4px 10px #000;
+}
+.navbar-default .navbar-brand {
+  color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a {
+	font-size: 18px;
+  	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #0c8ed9;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background: #0c8ed9;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  color: #fff;
+  background-color: #0c8ed9;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-default .navbar-link {
+  color: #777;
+}
+.navbar-default .navbar-link:hover {
+  color: #333;
+}
+.navbar-default .btn-link {
+  color: #777;
+}
+.navbar-default .btn-link:hover,
+.navbar-default .btn-link:focus {
+  color: #333;
+}
+.navbar-default .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-default .btn-link:hover,
+.navbar-default .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-default .btn-link:focus {
+  color: #ccc;
+}
+.progress {
+  display: block;
+  height: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  -webkit-transition: width .6s ease;
+       -o-transition: width .6s ease;
+          transition: width .6s ease;
+}
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+          background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+
+/*公用样式*/
+body{
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	background-repeat: repeat;
+}
+li{
+	list-style: none;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+a:hover,a:focus{
+	text-decoration: none;
+}
+
+/*头部区域样式*/
+#header{
+	width: 100%;
+	height:204px;
+	padding-top: 60px;
+}
+#header .top{
+	width: 90%;
+	height: 80px;
+	background: #fff;
+	margin: 0 auto;
+	box-shadow: 10px 2px 50px #000;
+}
+#header .top .brand{
+	float: left;
+	margin: 0;
+	width: 50%;
+	height:80px;
+	line-height: 80px;
+	padding-top: 20px;
+}
+#header .top .brand .logo{
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	line-height: 40px;
+	text-align: center;
+	font-size: 10px;
+	margin-left: 10%;
+}
+#header .top .brand .title{
+	display: block;
+	width: 60%;
+	height:40px;
+	font-size: 40px;
+	float: left;
+	color: #1ba3f1;
+	line-height: 40px;
+	font-family: '华文隶书';
+	font-weight: bold;
+	margin-left:1%; 
+}
+#header .top .list{
+	width: 28%;
+	height: 40px;
+	float: left;
+	margin-top: 20px;
+}
+#header .top .list li{
+	width: 33.333333%;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+	font-size: 16px;
+	color: #777777;
+	text-align: center;
+	border-right: 1px solid #e6e6e6;
+}
+#header .top .list li a{
+	color: #777777;
+}
+#header .top .list li a:hover{
+	text-decoration: underline;
+}
+#header .top .login{
+	display: block;
+	float: left;
+	width: 70px;
+	height: 40px;
+	margin-top: 20px;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 4%;
+	border:1px solid #dbdbdb;
+	background: #169af3;
+	color: #fff;
+	font-size: 16px;
+}
+#header .top .regedit{
+	display: block;
+	float: left;
+	width: 70px;
+	height: 40px;
+	margin-top: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: #777777;
+	border:1px solid #dbdbdb;
+	font-size: 16px;
+	margin-left: 1%;
+}
+/*轮播广告区*/
+#ad{
+	width: 100%;
+	height:100%;
+	position: relative;
+}
+#ad .carousel{
+	width: 90%;
+	height: 100%;
+	box-shadow: 10px -20px 50px #000;
+	margin: 0 auto;
+	background: #fff;
+	padding-top: 30px;
+}
+#ad .pre{
+	display: block;
+	width: 80px;
+	height: 200px;
+	background: #000;
+	opacity: 0;
+	position: absolute;
+	left: 5%;
+	top: calc(50% - 100px);
+	z-index: 9999;
+	color: #fff;
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 200px;
+}
+#ad .next{
+	display: block;
+	width: 80px;
+	height: 200px;
+	background: #000;
+	opacity: 0;
+	position: absolute;
+	right: 5%;
+	top: calc(50% - 100px);
+	z-index: 9999;
+	color: #fff;
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 200px;
+}
+/*推荐区域*/
+#recommend{
+	width: 100%;
+	height: 600px;
+}
+#recommend .recommend-box{
+	width: 90%;
+	margin: 0 auto;
+	background: #fff;
+	height: 100%;
+	padding-top: 50px;
+	box-shadow: 10px 50px 50px #000;
+}
+#recommend .recommend-box .today{
+	width: 40%;
+	height: 500px;
+	float: left;
+	margin-left: 7.5%;
+	box-shadow: 0px 0px 2px #000;
+}
+#recommend .recommend-box .today .title{
+	margin: 0;
+	color: #009bf2;
+	line-height: 100px;
+	padding-left: 5%;
+}
+#recommend .recommend-box .today .list{
+	width: 100%;
+	height: 400px;
+	border:1px solid #d2d2d2;
+}
+#recommend .recommend-box .today .list li{
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+}
+#recommend .recommend-box .today .list li:nth-child(2n+1){
+	background: #eeeeee;
+}
+#recommend .recommend-box .today .list strong{
+	color: #c93c3b;
+	display: block;
+	width: 10%;
+	height: 36px;
+	line-height: 36px;
+	float: left;
+	text-align: center;
+}
+#recommend .recommend-box .today .list a{
+	color: #000;
+}
+#recommend .recommend-box .today .list li:last-child{
+	height: 37px;
+	line-height: 37px;
+}
+#recommend .recommend-box .today .list li:last-child a{
+	float: right;
+	margin-right: 4%;
+}
+#recommend .recommend-box .today .list a:hover{
+	text-decoration: underline;
+}
+#recommend .recommend-box .love{
+	width: 40%;
+	height: 500px;
+	float: left;
+	margin-left: 5%;
+	box-shadow: 0px 0px 2px #000;
+}
+#recommend .recommend-box .love .title{
+	margin: 0;
+	color: #009bf2;
+	line-height: 100px;
+	padding-left: 5%;
+}
+#recommend .recommend-box .love .search-box{
+	display: block;
+	width: 70%;
+	height: 50px;
+	margin-left: 15%;
+	margin-bottom: 50px;
+}
+#recommend .recommend-box .love .search{
+	display: block;
+	width: 100%;
+	height: 50px;
+	background: none;
+	border:none;
+	font-size: 18px;
+	line-height: 50px;
+	text-indent: 6px;
+}
+#recommend .recommend-box .love .searchDiv{
+	display: block;
+	width: 80%;
+	height: 50px;
+	background: none;
+	border:none;
+	float: left;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+#recommend .recommend-box .love .search-btn{
+	display: block;
+	width: 20%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	float: left;
+	background: #0c8ed9;
+	color: #fff;
+	font-size: 18px;
+}
+#recommend .recommend-box .love .item{
+	width: 90%;
+	height: 40px;
+	margin:0 auto;
+	line-height: 40px;
+}
+#recommend .recommend-box .love .item .tag{
+	display: block;
+	width: 18%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	text-align: center;
+	background: #5abcf4;
+	margin-right: 5%;
+	font-size: 16px;
+	color: #fff;
+}
+#recommend .recommend-box .love .getMore{
+	width: 100%;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+}
+ #recommend .recommend-box .love .getMoreBtn{
+	/* display: block;
+	width: 30%;
+	height: 50px;
+	border:2px solid #eeeeee;
+	border-radius: 6px;
+	line-height: 50px;
+	font-size: 20px;
+	color: #777;
+	margin: 0 auto;
+	margin-top: 35px; */
+	padding:10px 60px;
+	color: #555555;
+} 
+ #recommend .recommend-box .love .searchMusic{
+ 	display: none;
+ 	position: relative;
+ 	width: 100%;
+ 	height: 510px;
+ 	background: #fff;
+ 	z-index: 9999;
+ 	border:1px solid #c5bcb5;
+ 	border-radius: 4px;
+ 	box-shadow: 0px 3px 6px #000;
+ }
+ #recommend .recommend-box .love .searchMusic .arrow{
+ 	box-sizing: border-box;
+ 	position: absolute;
+ 	width: 0;
+ 	height: 0;
+ 	border-width: 20px;
+ 	border-top-width: 0px;
+ 	border-style: solid;
+ 	border-color: transparent;
+ 	border-bottom-color:rgba(0,0,0,0.25);
+ 	left: calc(50% - 20px);
+ 	top: -20px;
+ }
+ #recommend .recommend-box .love .searchMusic .arrow::after{
+ 	box-sizing: border-box;
+ 	display: block;
+ 	width: 0;
+ 	height: 0;
+ 	content: " ";
+	border-width: 18px;
+	top: 1px;
+	margin-left: -18px;
+	border-top-width: 0;
+	border-color: transparent;
+	border-style: solid;
+	border-bottom-color: #fff; 
+	margin-top: 2px;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail{
+ 	width: 100%;
+ 	height: 100%;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .abstractKind{
+	width: 100%;
+ 	height: 100%;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .abstractKind > li{
+ 	width: 100%;
+ 	height: auto;
+
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .abstractKind > li img{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-left: 4%;
+	float: left;
+	margin-top: 15px;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .abstractKind > li strong{
+	display: block;
+	width: 60px;
+	height: 20px;
+	margin-left: 2%;
+	line-height: 20px;
+	font-size: 14px;
+	float: left;
+	text-align: center;
+	margin-top: 15px;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .detailKind{
+ 	display: block;
+ 	float: left;
+ 	width: 70%;
+ 	margin-left: 2%;
+ 	border-left: 1px solid #e5e5e5;
+ 	padding-left: 4%;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .detailKind li{
+	float: left;
+	line-height: 50px;
+ }
+ #recommend .recommend-box .love .searchMusic .searchDetail .detailKind li a{
+ 	color: #333;
+	padding:0px 6px 0px; 
+	border-right: 1px solid #d4d4d4; 
+ }
+  #recommend .recommend-box .love .searchMusic .searchDetail .detailKind li a:hover{
+ 	text-decoration: underline;
+ }
+
+/*歌单推荐区域*/
+#musicList{
+	width: 100%;
+	height: 800px;
+}
+#musicList .musicBox{
+	width: 90%;
+	height: 100%;
+	background: #fff;
+	margin: 0 auto;
+	box-shadow: 10px 50px 50px #000;
+}
+#musicList .box{
+	width: 85.5%;
+	height: 760px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 2px #000;
+}
+#musicList .box > .title{
+	margin: 0;
+	color: #009bf2;
+	line-height: 100px;
+	padding-left: 2.5%;
+}
+#musicList .box .listBox{
+	width: 95%;
+	height: 660px;
+	margin: 0 auto;
+}
+#musicList .box .listBox .item{
+	float: left;
+	width: 25%;
+	border:1px solid #d2d2d2;
+}
+#musicList .box .listBox .item .title{
+	margin: 0;
+	line-height: 60px;
+	background: #f4f4f4;
+	padding: 20px;
+}
+#musicList .box .listBox .item .title .cg{
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: blue;
+	float: left;
+	box-shadow: 0px 4px 2px #000;
+}
+#musicList .box .listBox .item .title .info{
+	display: block;
+	float: left;
+	line-height: 100px;
+	font-size: 16px;
+	padding-left: 20px;
+}
+#musicList .box .listBox .item .list{
+	margin: 0;
+	width: 100%;
+	height: 470px;
+}
+#musicList .box .listBox .item .list li{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+}
+#musicList .box .listBox .item .list li:last-child{
+	height: 50px;
+	line-height: 50px;
+}
+#musicList .box .listBox .item .list li:nth-child(2n+1){
+	background: #e8e8e8;
+}
+#musicList .box .listBox .item .list strong{
+	width: 20%;
+	display: block;
+	height: 100%;
+	float: left;
+	text-align: center;
+	color: #c93c3b;
+}
+#musicList .box .listBox .item .list a{
+	color: #000;
+}
+#musicList .box .listBox .item .list li:last-child a{
+	float: right;
+	margin-right: 8%;
+}
+#musicList .box .listBox .item .list a:hover{
+	text-decoration: underline;
+}
+/*获取更多区域*/
+#getMore{
+	width: 100%;
+	height: 80px;
+}
+#getMore .box{
+	width: 90%;
+	height: 100%;
+	background: #fff;
+	margin: 0 auto;
+}
+#getMore .box .btnBox{
+	width: 86%;
+	margin: 0 auto;
+	line-height: 200px;
+}
+#getMore .box .getMoreBtn{
+	display: block;
+	margin: 0 auto;
+	color: #777;
+}
+/*底部区域*/
+#footer{
+	width: 100%;
+	height: 200px;
+	margin-bottom: 60px;
+}
+#footer .box{
+	width: 90%;
+	height: 200px;
+	background: #000;
+	margin: 0 auto;
+}
+#footer .box .imgBox{
+	width: 100%;
+	height: 200px;
+} 
+#footer .box .imgBox img{
+	display: block;
+	width: 10%;
+	margin: 0 auto;
+	padding-top: calc(100px - 5%);
+}
+/*悬浮区域模态框*/
+#personalSearch .imgContent{
+	width: 100%;
+	box-sizing: border-box;
+	background: #fff;
+	padding: 20px 20px;
+	height: 340px;
+	border:1px solid #eeeeee;
+	border-radius: 2px;
+	box-shadow: 0px 0px 2px #000; 
+}
+#personalSearch .imgContent img{
+	display: block;
+	width: 528px;
+	height: 300px;
+}
+#personalSearch .findedMusic{
+	margin: 10px auto;
+}
+#personalSearch .findedMusic .findedCount{
+	font-size: 14px;
+	color: #999999;
+	padding: 4px 0px;
+}
+#personalSearch .findedMusic .menu{
+	display: block;
+	box-sizing: border-box;
+	width: 100%;	
+	height: 40px;
+	margin-top: 8px;
+}
+#personalSearch .findedMusic .menu li{
+	float: left;
+	display: block;
+	width: 20%;
+	box-sizing: border-box;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 1px solid #cdcdcd;
+	border-top: 2px solid #cdcdcd;
+} 
+#personalSearch .findedMusic .menu li:first-child{
+	border-left: 1px solid #cdcdcd;
+}
+#personalSearch .findedMusic .menu li:last-child{
+	border-right: 1px solid #cdcdcd;
+}
+#personalSearch .findedMusic .menu li a{
+	color: #000;
+}
+#personalSearch .findedMusic .menu .active{
+	border-bottom: none;
+	border-right: 1px solid #cdcdcd;;
+	border-top: 2px solid #d02d33;
+}
+#personalSearch .findedMusic .result{
+	margin-top: 8px;
+}
+#personalSearch .findedMusic .result li{
+	height: 40px;
+}
+#personalSearch .findedMusic .result li:nth-child(2n+1){
+	background: #fff;
+}
+#personalSearch .findedMusic .result li:nth-child(2n){
+	background: #f7f7f7;
+}
+#personalSearch .findedMusic .result li img{
+	display: block;
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 10px;
+}
+#personalSearch .findedMusic .result li .musicName{
+	display: block;
+	line-height: 40px;
+	float: left;
+	margin-left: 3px;
+}
+#personalSearch .findedMusic .result li .musicName:hover{
+	text-decoration: underline;
+}
+#personalSearch .findedMusic .result li .musicInfo{
+	display: block;
+	line-height: 40px;
+	float: left;
+	margin-left: 2px;
+	color: #b3b1b8;
+}
+#personalSearch .findedMusic .result li .author{
+	display: block;
+	line-height: 40px;
+	float: left;
+	margin-left: 108px;
+}
+#personalSearch .findedMusic .result li .origin{
+ 	display: block;
+	line-height: 40px;
+	float: left;
+	margin-left: 40px;
+}
+#personalSearch .findedMusic .result li .length{
+	display: block;
+	line-height: 40px;
+	margin-left: 40px;
+	float: left;
+}
+#personalSearch .similarMusic{
+	display: block;
+	margin-top: 8px;
+	width: 100%;
+}
+#personalSearch .similarMusic .title{
+	margin: 0;
+	color: #009bf2;
+	padding: 4px 0px;
+}
+#personalSearch .similarMusic .list{
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+}
+#personalSearch .similarMusic .list li:nth-child(2n){
+	background: #fff;
+}
+#personalSearch .similarMusic .list li:nth-child(2n+1){
+	background: #f7f7f7;
+}
+#personalSearch .similarMusic .list li strong{
+	display: block;
+	width: 10%;
+	text-align: center;
+	line-height: 40px;
+	color: #c93c3b;
+	float: left;
+} 
+#personalSearch .similarMusic .list li a{
+	display: block;
+	float: left;
+	line-height: 40px;
+	color: #000;
+}
+#personalSearch .similarMusic .list li:last-child a{
+	float: right;
+	margin-right: 4%;
+}
+#personalSearch .similarMusic .list li a:hover{
+	text-decoration: underline;
+}

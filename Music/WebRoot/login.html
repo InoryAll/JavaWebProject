@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Json Music</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="lib/normalize/normalize.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/owl-carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/owl-carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="lib/html5shiv/html5shiv.min.js"></script>
+		<script type="text/javascript" src="lib/respond/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!--登录框-->
+	<section id="main">
+		<div class="container">
+			<div class="main-box">
+				<div class="select-panel clearfix">
+					<div class="login active">
+						<h1 class="title">登录</h1>
+					</div>
+					<div class="regedit">
+						<h1 class="title">注册</h1>
+					</div>
+				</div>
+				<div class="content-panel">
+					<div class="login-content">
+						<form action="#">
+							<div class="input-group has-feedback">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-user"></span>
+								</span>
+								<input type="text" class="form-control input-lg" placeholder="请输入用户名" name="login-username">
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+							<div class="input-group has-feedback">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-lock"></span>
+								</span>
+								<input type="password" class="form-control input-lg" placeholder="请输入密码" name="login-password">
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+							<a href="javascript:;" class="doRegedit">还没有账号，立即注册</a>
+							<button class="btn btn-default btn-login btn-lg" type="button">
+								立即登录
+							</button>
+						</form>
+					</div>
+					<div class="regedit-content">
+						<form action="#">
+							<div class="input-group has-feedback">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</span>
+								<input type="text" class="form-control input-lg" placeholder="请输入邮箱" name="regedit-username">
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+							<div class="input-group has-feedback">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-tag"></span>
+								</span>
+								<input type="password" class="form-control input-lg" placeholder="请输入密码" name="regedit-password">
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+							<div class="input-group has-feedback">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-tags"></span>
+								</span>
+								<input type="password" class="form-control input-lg" placeholder="请再次输入密码" name="regedit-password-confirm">
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+							<a href="javascript:;" class="doLogin">已有账号，立即登录</a>
+							<button class="btn btn-default btn-regedit btn-lg" type="button">
+								立即注册
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/登录框-->
+	<!--模态框-->
+	<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="message-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title text-primary" id="message-title">提示</h4>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-success" role="alert"><strong>注意!</strong><span class="message">这里是提示内容！</span></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/模态框-->
+	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/owl-carousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

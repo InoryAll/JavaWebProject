@@ -1,0 +1,260 @@
+/*
+*Author:Inory;
+*Date:2017-4-6;
+*last modefied by:Inory;
+*last modefied time:2017-4-6;
+*/
+
+/*自定义的bootstrap样式*/
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  margin-top: 200px;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 300px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+/*公用样式*/
+body{
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	background-repeat: repeat;
+}
+li{
+	list-style: none;
+}
+ul{
+	padding: none;
+}
+a{
+	color: #2f1b41;
+	text-decoration: underline;
+}
+
+/*主要区域样式*/
+#main{
+	width: 100%;
+	margin-top: 200px;
+	margin-bottom: 100px
+}
+#main .main-box{
+	width: 500px;
+	margin: 0 auto;
+	box-shadow: 10px 10px 50px #000;
+}
+#main .select-panel{
+	width: 500px;
+	height: 90px;
+	margin:0 auto;
+}
+#main .select-panel div{
+	float: left;
+	width: 250px;
+	height: 90px;
+	background: #9ee6cf;
+	text-align: center;
+	cursor: default;
+}
+#main .select-panel div .title{
+	margin: 0;
+	line-height: 90px;
+	font-size: 30px;
+	color: #fff;
+}
+#main .select-panel .login{
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	border-right: 1px solid #fff;
+}
+#main .select-panel .regedit{
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	border-left: 1px solid #fff;
+}
+#main .content-panel{
+	width: 500px;
+	margin:0 auto;
+}
+#main .select-panel div.active{
+	background: #50c9ba;
+}
+
+#main .login-content{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: #fafafa;
+	opacity: 1;
+	/* display: none; */
+}
+#main .login-content .input-group{
+	width: 90%;
+	padding-left: 10%;
+	margin-bottom: 40px;
+}
+#main .login-content .doRegedit{
+	vertical-align: middle;
+	margin-left: 35%;
+}
+#main .login-content .btn-login{
+	margin-left: 5%;
+}
+
+#main .regedit-content{
+	display: none; 
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: #fafafa;
+	opacity: 1;
+}
+#main .regedit-content .input-group{
+	width: 90%;
+	padding-left: 10%;
+	margin-bottom: 40px;
+}
+#main .regedit-content .doLogin{
+	vertical-align: middle;
+	margin-left: 35%;
+}
+#main .regedit-content .btn-regedit{
+	margin-left: 8%;
+}
+#message-modal .message{
+	padding-left: 10px;
+}
+
+@media only screen and (max-width: 600px){
+	#main .main-box{
+		width: 360px;
+		margin: 0 auto;
+		box-shadow: 10px 10px 50px #000;
+	}
+	#main .select-panel{
+		width: 360px;
+		height: 80px;
+		margin:0 auto;
+	}
+	#main .select-panel div{
+		float: left;
+		width: 180px;
+		height: 80px;
+		background: #9ee6cf;
+		text-align: center;
+	}
+	#main .select-panel div .title{
+		margin: 0;
+		line-height: 80px;
+		font-size: 30px;
+		color: #fff;
+	}
+	#main .content-panel{
+		width: 360px;
+		margin:0 auto;
+	}
+	#main .login-content .doRegedit{
+		vertical-align: middle;
+		margin-left: 15%;
+	}
+	#main .regedit-content .doLogin{
+		vertical-align: middle;
+		margin-left: 15%;
+	}
+	#main .login-content{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background: #fafafa;
+		opacity: 1;
+		/* display: none; */
+	}
+	#main .login-content .input-group{
+		width: 90%;
+		padding-left: 10%;
+		margin-bottom: 30px;
+	}
+	#main .regedit-content{
+		display: none; 
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background: #fafafa;
+		opacity: 1;
+	}
+	#main .regedit-content .input-group{
+		width: 90%;
+		padding-left: 10%;
+		margin-bottom: 30px;
+	}
+}
+@media only screen and (max-width: 400px){
+	#main .main-box{
+		width: 300px;
+		margin: 0 auto;
+		box-shadow: 10px 10px 50px #000;
+	}
+	#main .select-panel{
+		width: 300px;
+		height: 70px;
+		margin:0 auto;
+	}
+	#main .select-panel div{
+		float: left;
+		width: 150px;
+		height: 70px;
+		background: #9ee6cf;
+		text-align: center;
+	}
+	#main .select-panel div .title{
+		margin: 0;
+		line-height: 70px;
+		font-size: 30px;
+		color: #fff;
+	}
+	#main .content-panel{
+		width: 300px;
+		margin:0 auto;
+	}
+	#main .login-content .doRegedit{
+		vertical-align: middle;
+		margin-left: 2%;
+	}
+	#main .regedit-content .doLogin{
+		vertical-align: middle;
+		margin-left: 2%;
+	}
+	#main .login-content{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background: #fafafa;
+		opacity: 1;
+		/* display: none; */
+	}
+	#main .login-content .input-group{
+		width: 90%;
+		padding-left: 10%;
+		margin-bottom: 20px;
+	}
+	#main .regedit-content{
+		display: none; 
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background: #fafafa;
+		opacity: 1;
+	}
+	#main .regedit-content .input-group{
+		width: 90%;
+		padding-left: 10%;
+		margin-bottom: 20px;
+	}
+}
