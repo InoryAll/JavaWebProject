@@ -70,8 +70,8 @@ html{
 #regedit_table1 tr{
 	display: block;
 	width: 800px;
-	height: 60px;
-	line-height: 60px;
+	height: 47px;
+	line-height: 47px;
 }
 #regedit_table1 td{
 	display: block;
@@ -92,7 +92,7 @@ html{
 #regedit_table2 tr{
 	display: block;
 	width: 800px;
-	height: 60px;
+	height: 76px;
 	line-height: 60px;
 }
 #regedit_table2 td{

@@ -86,7 +86,9 @@ public class TeacherServlet extends HttpServlet {
 				item = upload.parseRequest(request);
 				obj = cls.newInstance();
 			} catch (Exception e) {
+				out.write(JsonUtil.getJson("ReturnMessage", "反射类失败，请联系管理员"));
 				e.printStackTrace();
+				break;
 			}for(FileItem x : item){
 				if(x.isFormField()){
 					String function = "set" 
@@ -99,12 +101,10 @@ public class TeacherServlet extends HttpServlet {
 						method.invoke(obj, parameter);
 					} catch (NoSuchMethodException | SecurityException e) {
 						continue;
-					} catch (IllegalAccessException e) {
+					} catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+						out.write(JsonUtil.getJson("ReturnMessage", "反射方法，请联系管理员"));
 						e.printStackTrace();
-					} catch (IllegalArgumentException e) {
-						e.printStackTrace();
-					} catch (InvocationTargetException e) {
-						e.printStackTrace();
+						break;
 					}
 				}else{
 					String fileName=x.getName();
@@ -115,12 +115,16 @@ public class TeacherServlet extends HttpServlet {
 					try {
 						x.write(file);
 					} catch (Exception e) {
+						out.write(JsonUtil.getJson("ReturnMessage", "头像上传失败，请联系管理员"));
 						e.printStackTrace();
+						break;
 					}
 				}
 			}
-			teacherService.teacherRegister((Teacher)obj);
-			out.write(JsonUtil.getJson("ReturnMessage", "注册成功"));
+			if(teacherService.teacherRegister((Teacher)obj))
+				out.write(JsonUtil.getJson("ReturnMessage", "注册成功"));
+			else
+				out.write(JsonUtil.getJson("ReturnMessage", "数据库异常，请联系管理员"));
 			break;
 		case "add":
 			boolean ReturnMessage = false;

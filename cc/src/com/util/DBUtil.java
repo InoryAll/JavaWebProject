@@ -24,10 +24,10 @@ public class DBUtil {
 	private final static String url = "jdbc:mysql://localhost:3306/cc?useUnicode=true&characterEncoding=UTF-8";
 	private final static String username = "root";
 	private final static String password = "123456";
-//	private final static String url = "jdbc:mysql://10.66.182.50:3306/cc?useUnicode=true&characterEncoding=UTF-8";
-//	private final static String username = "root";
-//	private final static String password = "zjq1996518";
-//	
+	//private final static String url = "jdbc:mysql://10.66.182.50:3306/cc?useUnicode=true&characterEncoding=UTF-8";
+	//private final static String username = "root";
+	//private final static String password = "zjq1996518";
+	
 	
 	//public static Connection conn=null;
 	private Connection conn=null;

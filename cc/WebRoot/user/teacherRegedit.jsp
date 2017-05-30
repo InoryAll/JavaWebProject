@@ -7,6 +7,7 @@
 	<title>注册</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/regedit.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/teacherRegedit.css">
 </head>
 <body>
@@ -134,13 +135,54 @@
 							<tr>
 								<td>
 									<span class="input_span">
+										出生日期:
+									</span>
+									<div id="input_div">
+										<input type="text" name="birthday" placeholder="输入日期,例:1996-06-01" id="datepicker">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<span class="input_span">
+											 导师类别:
+										</span>
+										<span class="radio_span">
+											<input type="radio" name="tags" checked value="0">&nbsp;&nbsp;校内
+										</span>
+										<span class="radio_span female">
+											<input type="radio" name="tags" value="1">&nbsp;&nbsp;校外
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
+										工作单位:
+									</span>
+									<div id="input_div">
+										<input type="text" name="department" placeholder="输入你的工作单位" id="department">
+									</div>
+									<span class="input_tip">
+										*
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="input_span">
 										QQ或微信:
 									</span>
 									<div id="input_div">
 										<input type="text" name="onlinetool" placeholder="输入QQ或微信" id="onlinetool">
 									</div>
 									<span class="input_tip">
-										*
+										
 									</span>
 								</td>
 							</tr>
@@ -166,7 +208,7 @@
 										<input type="text" name="gschool" placeholder="输入毕业院校" id="gschool">
 									</div>
 									<span class="input_tip">
-										*
+										
 									</span>
 								</td>
 							</tr>
@@ -179,7 +221,7 @@
 										<input type="text" name="major" placeholder="输入所学专业" id="major">
 									</div>
 									<span class="input_tip">
-										*
+										
 									</span>
 								</td>
 							</tr>
@@ -211,10 +253,10 @@
 							<tr>
 								<td>
 									<span class="input_span">
-										手机号码:
+										职务:
 									</span>
 									<div id="input_div">
-										<input type="text" name="tel" placeholder="输入你的手机号码" id="stu_tel">
+										<input type="text" name="post" placeholder="输入职务" id="post">
 									</div>
 									<span class="input_tip">
 										*
@@ -228,19 +270,6 @@
 									</span>
 									<div id="input_div">
 										<input type="text" name="title" placeholder="输入你的职称" id="title">
-									</div>
-									<span class="input_tip">
-										*
-									</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="input_span">
-										部门:
-									</span>
-									<div id="input_div">
-										<input type="text" name="department" placeholder="输入你的部门" id="department">
 									</div>
 									<span class="input_tip">
 										*
@@ -338,8 +367,9 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/md5.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/regedit.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/teacherRegedit.js"></script>
@@ -350,7 +380,7 @@
 
 			var reg=/^1\d{10}$/g;
 			if (reg.test($('input[name=id]').val())==false){
-				alert('教师号长度必须为11位手机号');
+				alert('手机号限定11位，且首位为1');
 				return;
 			}
 
@@ -359,7 +389,7 @@
 				return;
 			}
 
-			if ($('input[name=password]').val()<6||$('input[name=re_password]').val()<6) {
+			if ($('input[name=password]').val().length<6||$('input[name=re_password]').val().length<6) {
 				alert('密码的长度不得小于6位');
 				return;
 			}
@@ -369,8 +399,14 @@
 				return;
 			}
 
-			if ($('input[name=onlinetool]').val().length<6){
-				alert('QQ以及微信长度不能小于6位');
+			reg=/^\d{4}\-\d{1,2}\-\d{1,2}$/;
+			if (reg.test($('input[name=birthday]').val())==false){
+				alert('生日的格式不正确,应为XXXX-XX-XX');
+				return;
+			}
+
+			if ($('input[name=post]').val().length<2){
+				alert('请填写正确的职务');
 				return;
 			}
 
@@ -379,25 +415,9 @@
 				return;
 			}
 
-			if ($('input[name=gschool]').val().length<2){
-				alert('请填写毕业院校');
-				return;
-			}
-
-			if ($('input[name=major]').val().length<2){
-				alert('请填写所学专业');
-				return;
-			}
-
-			reg=/^\w+@\w{2,6}\.\w{2,5}$/g;
+			reg=/^\w+@\S{5,20}$/g;
 			if (reg.test($('input[name=email]').val())==false){
 				alert('邮箱格式不正确');
-				return;
-			}
-
-			reg=/^\d{11}$/;
-			if (reg.test($('input[name=tel]').val())==false){
-				alert('手机号码格式不正确');
 				return;
 			}
 
@@ -416,20 +436,6 @@
 				return;
 			}
 
-			if($('textarea[name=info1]').val()==''){
-				alert('请填写创新创业教育工作或创业工作简历');
-				return;
-			}
-
-			if($('textarea[name=info2]').val()==''){
-				alert('请填写近年来在创新创业教育方面所获成果和奖励');
-				return;
-			}
-
-			if($('textarea[name=info3]').val()==''){
-				alert('请填写近年来担任国家级、省级、校级、创新创业教育方面项目评审专家、社会兼职情况');
-				return;
-			}
 
 			$('#message').html('');
 

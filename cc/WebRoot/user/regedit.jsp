@@ -292,7 +292,7 @@
 				return;
 			}
 
-			reg=/^\w+@\w{2,6}\.\w{2,5}$/g;
+			reg=/^\w+@\S{5,20}$/g;
 			if (reg.test($('input[name=email]').val())==false){
 				alert('邮箱格式不正确');
 				return;

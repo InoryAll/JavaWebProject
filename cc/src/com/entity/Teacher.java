@@ -9,14 +9,17 @@ public class Teacher extends Person{
 	private String name;
 	private String password;
 	private String gender;
+	private String birthday;//生日
 	private String gschool;//graduate school
 	private String major;//major
 	private String onlinetool;//qq或者微信
 	private String email;//邮箱
 	private String tel;//电话
-	private String nation;
+	private String nation;//民族
+	private String post;//职务
 	private String title;//职称
-	private String department;//部门
+	private String department;//工作单位
+	private String tags;//工作单位
 	private String image;//头像
 	private String info1;//创新创业教育工作或创业工作简历
 	private String info2;//近年来在创新创业教育方面所获成果和奖励:
@@ -30,23 +33,26 @@ public class Teacher extends Person{
 		dflag = Constant.NOTDELETE;
 	}
 
-	public Teacher(String id, String name, String password, String gender,String gschool,String major,
-			String onlinetool, String email, String tel, String nation,
-			String title, String department, String image, String info1,String info2,
+	public Teacher(String id, String name, String password, String gender,String birthday,String gschool,String major,
+			String onlinetool, String email, String tel, String nation,String post,
+			String title, String department,String tags, String image, String info1,String info2,
 			String info3,String goodfield, int pflag, int dflag) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.gender = gender;
+		this.birthday = birthday;
 		this.gschool = gschool;
 		this.major = major;
 		this.onlinetool = onlinetool;
 		this.email = email;
 		this.tel = tel;
 		this.nation = nation;
+		this.post = post;
 		this.title = title;
 		this.department = department;
+		this.tags = tags;
 		this.image = image;
 		this.info1 = info1;
 		this.info2 = info2;
@@ -60,14 +66,17 @@ public class Teacher extends Person{
 		this.name =(String)map.get("name");
 		this.password =(String)map.get("password");
 		this.gender =(String)map.get("gender");
+		this.birthday =(String)map.get("birthday");
 		this.gschool =(String)map.get("gschool");
 		this.major =(String)map.get("major");
 		this.onlinetool =(String)map.get("onlinetool");
 		this.email =(String)map.get("email");
 		this.tel =(String)map.get("tel");
 		this.nation =(String)map.get("nation");
+		this.post =(String)map.get("post");
 		this.title =(String)map.get("title");
 		this.department =(String)map.get("department");
+		this.tags =(String)map.get("tags");
 		this.image =(String)map.get("image");
 		this.info1 =(String)map.get("info1");
 		this.info2 =(String)map.get("info2");
@@ -94,6 +103,14 @@ public class Teacher extends Person{
 	
 	public void setGender(String gender) {this.gender = gender;}
 	
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
 	public String getGschool() {
 		return gschool;
 	}
@@ -118,25 +135,21 @@ public class Teacher extends Person{
 		this.onlinetool = onlinetool;
 	}
 
-	public String getEmail() {
-		return email;
-	}
+	public String getEmail() {return email;}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	public void setEmail(String email) {this.email = email;}
 
-	public String getTel() {
-		return tel;
-	}
+	public String getTel() {return tel;}
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+	public void setTel(String tel) {this.tel = tel;}
 
 	public String getNation() {return nation;}
 
 	public void setNation(String nation) {this.nation = nation;}
+
+	public String getPost() {return post;}
+
+	public void setPost(String post) {this.post = post;}
 
 	public String getTitle() {return title;}
 
@@ -145,6 +158,10 @@ public class Teacher extends Person{
 	public String getDepartment() {return department;}
 	
 	public void setDepartment(String department) {this.department = department;}
+	
+	public String getTags() {return tags;}
+
+	public void setTags(String tags) {this.tags = tags;}
 	
 	public String getImage() {return image;}
 	

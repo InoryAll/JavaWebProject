@@ -75,7 +75,7 @@ public class StudentDao {
 		List<Object> param = new ArrayList<Object>();
 		
 		
-		StringBuffer sql = new StringBuffer("update Student set dflag=0");
+		StringBuffer sql = new StringBuffer("update student set dflag=0");
 		if(!StringUtil.isNullString(studentModel.getName())){
 			sql.append(",name = ?");
 			param.add(studentModel.getName());
@@ -137,7 +137,7 @@ public class StudentDao {
 		
 		param.add(id);
 		
-		String sql = "select * from Student where dflag=0 and id = ?";
+		String sql = "select * from student where dflag=0 and id = ?";
 		List<Map<String,Object>> result = dbUtil.findResult(sql, param);
 		if(result!=null && result.size()>0){
 			Map<String,Object> map = result.get(0);

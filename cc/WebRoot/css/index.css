@@ -26,9 +26,12 @@ textarea{
 html{
 	width: 100%;
 	height: auto;
+	min-width: 1610px;
 	font-family: '微软雅黑';
 }
 body{
+	width: 100%;
+	min-width: 1610px;
 	height:auto;
 }
 #header_box{

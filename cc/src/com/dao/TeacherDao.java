@@ -20,14 +20,17 @@ public class TeacherDao {
 		param.add(teacher.getName());
 		param.add(teacher.getPassword());
 		param.add(teacher.getGender());
+		param.add(teacher.getBirthday());
 		param.add(teacher.getGschool());
 		param.add(teacher.getMajor());
 		param.add(teacher.getOnlinetool());
 		param.add(teacher.getEmail());
 		param.add(teacher.getTel());
 		param.add(teacher.getNation());
+		param.add(teacher.getPost());
 		param.add(teacher.getTitle());
 		param.add(teacher.getDepartment());
+		param.add(teacher.getTags());
 		param.add(teacher.getImage());
 		param.add(teacher.getInfo1());
 		param.add(teacher.getInfo2());
@@ -36,7 +39,7 @@ public class TeacherDao {
 		param.add(teacher.getPflag());
 		param.add(teacher.getDflag());
 		
-		String sql = "insert into teacher values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into teacher values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		if(dbUtil.excutePUpdate(sql, param)){
 			if(dbUtil!=null)
 			{	
@@ -96,6 +99,10 @@ public class TeacherDao {
 			sql.append(",gender = ?");
 			param.add(teacherModel.getGender());
 		}
+		if(!StringUtil.isNullString(teacherModel.getBirthday())){
+			sql.append(",birthday = ?");
+			param.add(teacherModel.getBirthday());
+		}
 		if(!StringUtil.isNullString(teacherModel.getGender())){
 			sql.append(",gschool = ?");
 			param.add(teacherModel.getGschool());
@@ -120,6 +127,10 @@ public class TeacherDao {
 			sql.append(",nation = ?");
 			param.add(teacherModel.getNation());
 		}
+		if(!StringUtil.isNullString(teacherModel.getPost())){
+			sql.append(",post = ?");
+			param.add(teacherModel.getPost());
+		}
 		if(!StringUtil.isNullString(teacherModel.getTitle())){
 			sql.append(",title = ?");
 			param.add(teacherModel.getTitle());
@@ -127,6 +138,10 @@ public class TeacherDao {
 		if(!StringUtil.isNullString(teacherModel.getDepartment())){
 			sql.append(",department = ?");
 			param.add(teacherModel.getDepartment());
+		}
+		if(!StringUtil.isNullString(teacherModel.getTags())){
+			sql.append(",tags = ?");
+			param.add(teacherModel.getTags());
 		}
 		if(!StringUtil.isNullString(teacherModel.getImage())){
 			sql.append(",image = ?");
@@ -173,6 +188,54 @@ public class TeacherDao {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param tags 0-校内导师,1-校外导师
+	 * @param index 代表rows
+	 * @param offset 代表偏移量  -1:代表查到表末尾
+	 * @return List for Teacher
+	 */
+	public List<Teacher> findAllTeacher(String tags,int index,int offset){
+		DBUtil dbUtil = new DBUtil();
+		dbUtil.getConnection();
+		List<Object> param = new ArrayList<Object>();
+		List<Teacher> teacherlist = new ArrayList<Teacher>();
+		Teacher teacher = null;
+		
+		String sql = "select * from teacher where dflag=0 and tags like ? LIMIT ?,?";
+		param.add(tags);
+		if(offset>=0){
+			if(index<=0){
+				param.add(0);
+				param.add(offset);
+			}else{
+				param.add(index);
+				param.add(offset);
+			}
+		}else{
+			if(index<0){
+				param.add(0);
+				param.add(999999999);
+			}else{
+				param.add(index);
+				param.add(999999999);
+			}
+		}		
+		List<Map<String,Object>> result = dbUtil.findResult(sql, param);
+		if(result!=null && result.size()>0){
+			//Map<String,Object> map = result.get(0);
+			for (Map<String,Object> map : result){
+				teacher = new Teacher(map);
+				teacherlist.add(teacher);
+			}
+		}
+		if(dbUtil!=null)
+		{	
+			dbUtil.closeAll();
+			dbUtil=null;
+		}
+		return teacherlist;
+	}
 	
 	public Teacher findTeacherById(String id){
 		DBUtil dbUtil = new DBUtil();
@@ -242,6 +305,11 @@ public class TeacherDao {
 			sqltotalRecord.append(" and gender = ?");
 			param.add(teacherModel.getGender());
 		}
+		if(!StringUtil.isNullString(teacherModel.getBirthday())){
+			sql.append(" and birthday = ?");
+			sqltotalRecord.append(" and birthday = ?");
+			param.add(teacherModel.getBirthday());
+		}
 		if(!StringUtil.isNullString(teacherModel.getGschool())){
 			sql.append(" and gschool = ?");
 			sqltotalRecord.append(" and gschool = ?");
@@ -267,6 +335,16 @@ public class TeacherDao {
 			sqltotalRecord.append(" and email = ?");
 			param.add(teacherModel.getEmail());
 		}
+		if(!StringUtil.isNullString(teacherModel.getNation())){
+			sql.append(" and nation like ?");
+			sqltotalRecord.append(" and nation like ?");
+			param.add("%"+teacherModel.getNation().trim()+"%");
+		}
+		if(!StringUtil.isNullString(teacherModel.getPost())){
+			sql.append(" and post like ?");
+			sqltotalRecord.append(" and post like ?");
+			param.add("%"+teacherModel.getPost()+"%");
+		}
 		if(!StringUtil.isNullString(teacherModel.getTitle())){
 			sql.append(" and title like ?");
 			sqltotalRecord.append(" and title like ?");
@@ -276,6 +354,11 @@ public class TeacherDao {
 			sql.append(" and department like ?");
 			sqltotalRecord.append(" and department like ?");
 			param.add("%"+teacherModel.getDepartment().trim()+"%");
+		}
+		if(!StringUtil.isNullString(teacherModel.getTags())){
+			sql.append(" and tags like ?");
+			sqltotalRecord.append(" and tags like ?");
+			param.add("%"+teacherModel.getTags().trim()+"%");
 		}
 		if(!StringUtil.isNullString(teacherModel.getGoodfield())){
 			sql.append(" and goodfield like ?");
